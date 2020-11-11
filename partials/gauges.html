@@ -2,6 +2,10 @@
 <script type="text/javascript">
 var _gauges = _gauges || [];
 (function() {
+  if (
+    window.location.href.match(/\/localhost/) ||
+    window.location.href.match(/\/127\.0\.0\.1/)
+  ) return;
   var t   = document.createElement('script');
   t.type  = 'text/javascript';
   t.async = true;
