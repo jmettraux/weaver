@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>${blog.title} - ${title}</title>
+  ${partial('head.html')}
+</head>
+<body class="post">
+<div id="content">
+<a href="index.html"><img class="brand" src="images/wheel.jpg" /></a>
+${CONTENT}
+<div class="links">
+  <a href="index.html">index</a>
+  <a href="all.html#${id}">all/#${id}</a>
+  <a href="mailto:jmettraux+weaver${id}@gmail.com">comments</a>
+  <!--
+  <a href="https://github.com/jmettraux/weaver/tree/master/posts/${id}.md">source</a>
+  -->
+  <a href="copyright.html">copyright</a>
+  |
+  <span class="tags">${TAGS}</span>
+</div>
+</div>
+${partial('gauges.html')}
+</body>
+</html>
+

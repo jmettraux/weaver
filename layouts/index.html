@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>${blog.title}</title>
+  ${partial('head.html')}
+</head>
+<body id="index">
+<div id="content">
+
+  <h1>
+    <a href="index.html"><img class="brand" src="images/wheel.jpg" /></a>
+    ${blog.title}
+  </h1>
+
+  <p>${blog.author.name}</P>
+
+  <p>
+    <!--
+    <a href="mailto:jmettraux+weaver@gmail.com">jmettraux+weaver@gmail.com</a>
+    -->
+  </p>
+
+  <p class="links">
+    <a href="all.html">all.html</a>
+    <a style="display: none;" href="index.html" class="all-tags">all tags</a>
+  </p>
+
+  ${CONTENT}
+
+  <p class="foot-links">
+    <!--<a href="https://github.com/jmettraux/weaver/">source</a>-->
+    <a href="copyright.html">copyright</a>
+  </p>
+</div>
+
+${partial('filters.html')}
+${partial('gauges.html')}
+</body>
+</html>
+

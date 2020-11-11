@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>${blog.title}</title>
+  ${partial('head.html')}
+</head>
+<body id="copyright">
+<div id="content">
+
+  <h1>
+    <a href="index.html"><img class="brand" src="images/wheel.jpg" /></a>
+    ${blog.title}
+  </h1>
+
+  <p>
+    Copyright (c) 2020-2020, John Mettraux, ${blog.author.email}
+  </p>
+  <p>
+    Unauthorized use and/or duplication of this material without express and written permission from this site's author is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to John Mettraux with appropriate and specific direction to the original content.
+  </p>
+
+  <p class="links">
+    <a href="javascript:history.back()">back</a>
+  </p>
+</div>
+
+${partial('gauges.html')}
+</body>
+</html>
+

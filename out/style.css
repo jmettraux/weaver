@@ -1,0 +1,237 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126
+   License: none (public domain) */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after {
+  content: ''; content: none;
+}
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* style.css proper */
+
+a:visited { color: black; }
+a:active { color: grey; }
+a:link { color: grey; }
+
+#content {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  width: 800px;
+  margin: 1em auto;
+}
+h1 {
+  font-size: 210%;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+h2 {
+  font-size: 140%;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+h3 {
+  font-weight: bold;
+  margin-bottom: .7em;
+}
+/*h4 {
+  font-size: 110%;
+  margin-bottom: .7em;
+}*/
+em {
+  font-style: italic;
+}
+strong {
+  font-weight: bold;
+}
+p {
+  margin-bottom: 1em;
+  line-height: 1.25em;
+}
+
+img {
+  width: 100%;
+}
+
+img.brand {
+  width: 1.4em;
+  height: 1.4em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+#index p.links {
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
+}
+
+.index-post {
+  margin-bottom: 0.4em;
+  height: 1.14em;
+  overflow: hidden;
+}
+.index-post > * {
+  display: inline;
+  margin: 0;
+  line-height: 1.1em;
+}
+.index-post .id {
+  margin-right: 0.35em;
+}
+.index-post h2 {
+  font-size: 100%;
+  font-weight: bold;
+  margin-right: 0.35em;
+}
+.index-post .links {
+  margin: 0;
+}
+
+.post h2 {
+  margin-top: 1.4em;
+}
+.post .links {
+  margin-top: 2em;
+  margin-bottom: 2.1em;
+}
+
+.all-post h2.title {
+  margin-top: 2.1em;
+}
+.all-post h2.title .tags {
+  font-weight: normal;
+  font-size: 70%;
+  margin-left: .4em;
+}
+.all-post span.id {
+  font-weight: normal;
+  font-size: 70%;
+  margin-right: .4em;
+}
+
+body.post img.brand {
+  height: 24px;
+  width: 24px;
+  float: left;
+  margin-right: .4em;
+}
+
+.foot-links {
+  margin-top: 2.1em;
+  margin-bottom: 2.1em;
+}
+
+/* https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/ */
+blockquote {
+  position: relative;
+  /*margin-top: 2.1em;*/
+  margin-top: 0;
+  padding: 0.5em 0;
+  quotes: "\201C""\201D""\2018""\2019";
+  line-height: 1.2em;
+}
+blockquote:before {
+  position: absolute;
+  top: 21px;
+  left: 0px;
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+}
+blockquote:after {
+  content: no-close-quote;
+}
+blockquote p {
+  display: block;
+  padding-left: 35px;
+}
+
+code {
+  font-family: monospace;
+  background: #dfdfdf;
+  padding: 0 0.2em;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  border-radius: 2%;
+}
+
+pre {
+  font-family: monospace;
+  margin-top: 0.9em;
+  margin-bottom: 1.4em;
+}
+pre > code {
+  font-family: monospace;
+  background-color: lightgrey;
+  padding: .3em .7em;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  border-radius: 2%;
+}
+
+pre.listing {
+  padding: .3em .7em;
+  background-color: #e5e5e5;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  border-radius: 2%;
+}
+
+img.screenshot {
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  border-radius: 2%;
+}
+
+#index em {
+  font-style: normal;
+}
+#index strong {
+  font-weight: normal;
+}
+#index code {
+  background-color: white;
+  font-family: inherit;
+}
+
+iframe.speakerdeck-iframe {
+  margin-bottom: 1.4em !important;
+}
+
+ul {
+  margin-bottom: 1.4em;
+}
+li {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 1.4em;
+  margin-bottom: 0.14em;
+}
+

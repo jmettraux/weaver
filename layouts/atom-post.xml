@@ -1,0 +1,14 @@
+
+<entry>
+<title>${title}</title>
+<link href="${blog.uri}/${id}.html" />
+<updated>${date}</updated>
+<id>${blog.uri}/${id}.html</id>
+<content type="xhtml">
+<div xmlns="http://www.w3.org/1999/xhtml">
+${CONTENT}
+</div>
+</content>
+${TAGS}
+</entry>
+
