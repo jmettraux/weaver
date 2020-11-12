@@ -141,7 +141,8 @@ img.brand {
 }
 
 .post h2 {
-  margin-top: 1.4em;
+  /*margin-top: 1.4em;*/
+  display: none;
 }
 .post:not(.all-post) h2 {
   font-family: 'Uncial Antiqua', cursive;
@@ -150,6 +151,26 @@ img.brand {
 .post .links {
   margin-top: 2em;
   margin-bottom: 2.1em;
+}
+
+.post-title {
+  margin-bottom: 1.4em;
+}
+.post-title .brand {
+  display: inline-block;
+}
+.post-title .title-and-id {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 0.7em;
+}
+.post-title .title {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 210%;
+  margin-bottom: 0.14em;
+}
+.post-title .id {
+  color: #aaaaaa;
 }
 
 .all-post h2.title {

@@ -132,6 +132,11 @@ module Blog
     vars['id'] = File.basename(path, '.md')
     vars['tags'] ||= []
 
+    vars['_id'] = vars['id']
+    if m = vars['id'].match(/\A(\d{4})(\d{2})(\d{2})\z/)
+      vars['_id'] = "#{m[1]}-#{m[2]}-#{m[3]}"
+    end
+
     content = rework_text(content)
 
     [ vars, content ]
