@@ -27,6 +27,8 @@ require 'blog'
 post_layout = File.read('layouts/index-post.html')
 tag_layout = File.read('layouts/index-post-tag.html')
 
+all_tags = []
+
 posts =
   Dir['posts/*.md'].sort.reverse.collect do |path|
 
@@ -48,11 +50,19 @@ posts =
       .collect { |tag| tag_layout.substitute({ tag: tag }) }
       .join(' ')
 
+    all_tags.concat(vars['tags'])
+
     post_layout.substitute(vars)
   end
 
 vars = Blog.merge_vars({})
+
 vars['CONTENT'] = posts.join("\n")
+
+vars['all_tags'] = all_tags.uniq.sort
+vars['ALL_TAGS'] = vars['all_tags']
+  .collect { |tag| tag_layout.substitute({ tag: tag }) }
+  .join(' ')
 
 layout = File.read('layouts/index.html')
 content = layout.substitute(vars)
