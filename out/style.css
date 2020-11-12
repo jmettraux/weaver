@@ -74,9 +74,26 @@ p {
   line-height: 1.25em;
 }
 
-span.title {
-  font-family: 'Uncial Antiqua', cursive;
+.brand-and-title {
+  margin-bottom: 1.4em;
 }
+.brand-and-title .brand {
+  display: inline-block;
+}
+.brand-and-title .titles {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 0.7em;
+}
+.brand-and-title .title {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 210%;
+  margin-bottom: 0.14em;
+}
+.brand-and-title .subtitle {
+  color: #aaaaaa;
+}
+
 
 img {
   width: 100%;
@@ -117,9 +134,18 @@ img.brand {
 .index-post .links {
   margin: 0;
 }
+.index-post h2 {
+  font-family: 'Uncial Antiqua', cursive;
+  font-weight: lighter;
+  font-size: 110%;
+}
 
 .post h2 {
   margin-top: 1.4em;
+}
+.post:not(.all-post) h2 {
+  font-family: 'Uncial Antiqua', cursive;
+  font-weight: lighter;
 }
 .post .links {
   margin-top: 2em;
@@ -139,12 +165,22 @@ img.brand {
   font-size: 70%;
   margin-right: .4em;
 }
+.all-post h2.title .t {
+  font-family: 'Uncial Antiqua', cursive;
+  font-weight: lighter;
+}
 
 body.post img.brand {
-  height: 24px;
-  width: 24px;
+  height: 3.5em;
+  width: 3.5em;
   float: left;
   margin-right: .4em;
+}
+body.post h2 {
+  vertical-align: bottom;
+  font-size: 210%;
+  padding-top: 0.7em;
+  padding-left: 0.49em;
 }
 
 .foot-links {
