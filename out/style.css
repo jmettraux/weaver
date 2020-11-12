@@ -141,8 +141,7 @@ img.brand {
 }
 
 .post h2 {
-  /*margin-top: 1.4em;*/
-  display: none;
+  margin-top: 1.4em;
 }
 .post:not(.all-post) h2 {
   font-family: 'Uncial Antiqua', cursive;
