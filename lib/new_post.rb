@@ -21,8 +21,16 @@
 #
 # Made in Japan.
 
+
 n = Time.now
-fn = "posts/#{n.strftime('%Y%m%d')}.md"
+fn = nil
+  #
+loop do
+  fn = "posts/#{n.strftime('%Y%m%d')}.md"
+  break unless File.exist?(fn)
+  n = n + 24 * 3600
+end
+
 
 File.open(fn, 'ab') do |f|
   f.print(%{
