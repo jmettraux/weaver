@@ -18,6 +18,7 @@ This blog uses:
 * [Git](https://git-scm.com/)
 * [GitHub](https://github.com)
 * [Vim](http://www.vim.org/)
+* [Uncial Antiqua](https://fonts.google.com/specimen/Uncial+Antiqua?query=uncial&sidebar.open=true&selection.family=Uncial+Antiqua#standard-styles) by Astigmatic
 
 
 ## atom.xml validation

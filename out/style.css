@@ -74,6 +74,10 @@ p {
   line-height: 1.25em;
 }
 
+span.title {
+  font-family: 'Uncial Antiqua', cursive;
+}
+
 img {
   width: 100%;
 }
