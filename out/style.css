@@ -299,4 +299,10 @@ figure.left {
   float: left;
   margin-right: 0.49em;
 }
+figcaption {
+  color: #aaaaaa;
+  margin-top: 0.14em;
+}
+figcaption a { color: #aaaaaa; }
+figcaption a:visited { color: #aaaaaa; }
 
