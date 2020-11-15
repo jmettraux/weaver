@@ -299,6 +299,10 @@ figure.left {
   float: left;
   margin-right: 0.49em;
 }
+figure.right {
+  float: right;
+  margin-left: 0.49em;
+}
 figcaption {
   color: #aaaaaa;
   margin-top: 0.14em;
