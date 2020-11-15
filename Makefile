@@ -23,7 +23,8 @@ write:
 w: write
 
 publish:
-	rsync -azv out/ shooto:/var/www/htdocs/weaver.skepti.ch/
+	rsync -azv --delete \
+      out/ shooto:/var/www/htdocs/weaver.skepti.ch/
 p: publish
 
 serve:
