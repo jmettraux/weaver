@@ -15,6 +15,9 @@ copyright:
 atom:
 	bundle exec ruby -Ilib lib/render_atom.rb
 
+W:
+	vim -c ":Vt posts/"
+
 new:
 	bundle exec ruby -Ilib lib/new_post.rb
 n: new
