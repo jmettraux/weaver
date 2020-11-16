@@ -55,31 +55,27 @@ p {
   }
 }
 
-.brand-and-title {
+.blog-title {
   margin-bottom: 1.4em;
 }
-.brand-and-title .brand {
-  display: inline-block;
+.blog-title table {
+  border-spacing: 0.35em;
 }
-.brand-and-title .titles {
-  display: inline-block;
-  vertical-align: bottom;
-  margin-left: 0.7em;
-}
-.brand-and-title .title {
+.blog-title .title {
   font-family: 'Uncial Antiqua', cursive;
   font-size: 210%;
-  margin-bottom: 0.14em;
+  padding-left: 0.7rem;
+  padding-top: 0.35em;
 }
-.brand-and-title .subtitle {
+.blog-title .subtitle {
   color: #aaaaaa;
+  padding-top: 0.35em;
+  padding-left: 0.7rem;
 }
-
 
 img {
   width: 100%;
 }
-
 img.brand {
   width: 4.9em;
   height: 4.9em;
@@ -90,12 +86,16 @@ img.brand {
 }
 
 @media (max-width: 600px) {
-  .brand-and-title .title {
-    font-size: 140%;
+  .blog-title .title {
+    font-size: 120%;
   }
-  img.brand {
+  .blog-title .subtitle {
+    font-size: 90%;
+  }
+  .blog-title img.brand {
     width: 3.5em;
     height: 3.5em;
+    vertical-align: top;
   }
 }
 
@@ -112,7 +112,9 @@ img.brand {
 .index-post > * {
   display: inline;
   margin: 0;
+  /*
   line-height: 1.2rem;
+  */
 }
 .index-post .id {
   margin-right: 0.35em;
@@ -131,8 +133,19 @@ img.brand {
   font-size: 110%;
 }
 @media (max-width: 600px) {
-  .index-post > p {
-    display: none;
+  .index-post {
+    height: inherit;
+    overflow: inherit;
+    margin-bottom: 1.4em;
+  }
+  .index-post > * {
+    display: block;
+  }
+  .index-post h2 {
+    margin: 0.35em 0 !important;
+  }
+  .index-post .tags {
+    margin: 0.49em 0;
   }
 }
 
@@ -149,7 +162,7 @@ img.brand {
 }
 
 .post-title {
-  margin-bottom: 1.4em;
+  margin-bottom: 1.75em;
 }
 .post-title .brand {
   display: inline-block;
@@ -166,6 +179,11 @@ img.brand {
 }
 .post-title .id {
   color: #aaaaaa;
+}
+@media (max-width: 600px) {
+  .post-title .title {
+    font-size: 110%;
+  }
 }
 
 .all-post h2.title {
@@ -186,11 +204,16 @@ img.brand {
   font-weight: lighter;
 }
 
-body.post img.brand {
-  height: 3.5em;
-  width: 3.5em;
+body.post div.brand {
   float: left;
-  margin-right: .4em;
+  margin-right: 0.42em;
+  margin-bottom: 0.35em;
+}
+body.post div.brand {
+  img.brand {
+    height: 3.5em;
+    width: 3.5em;
+  }
 }
 body.post h2 {
   vertical-align: bottom;

@@ -1,4 +1,5 @@
 
+<!--
 <div class=brand-and-title>
   <div class="brand">${partial('brand.html')}</div>
   <div class="titles">
@@ -6,4 +7,14 @@
     <div class="subtitle">${blog.subtitle}</div>
   </div>
 </div>
+-->
+<table class="blog-title">
+  <tr>
+    <td rowspan="2">${partial('brand.html')}</td>
+    <td class="title">${blog.title}</td>
+  </tr>
+  <tr>
+    <td class="subtitle">${blog.subtitle}</td>
+  </tr>
+</table>
 

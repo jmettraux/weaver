@@ -26,7 +26,8 @@ write:
 w: write
 
 publish:
-	rsync -azv --delete \
+	rsync -azv --delete --delete-excluded \
+      --exclude *.swp \
       out/ shooto:/var/www/htdocs/weaver.skepti.ch/
 p: publish
 
