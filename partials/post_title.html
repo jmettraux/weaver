@@ -1,9 +1,11 @@
 
-<div class=post-title>
-  <div class="brand">${partial('brand.html')}</div>
-  <div class="title-and-id">
-    <div class="title">${title}</div>
-    <div class="id">${_id}</div>
-  </div>
-</div>
+<table class="post-title">
+  <tr>
+    <td rowspan="2">${partial('brand.html')}</td>
+    <td class="title">${title}</td>
+  </tr>
+  <tr>
+    <td class="subtitle id">${_id}</td>
+  </tr>
+</table>
 

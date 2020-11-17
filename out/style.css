@@ -55,24 +55,6 @@ p {
   }
 }
 
-.blog-title {
-  margin-bottom: 1.4em;
-}
-.blog-title table {
-  border-spacing: 0.35em;
-}
-.blog-title .title {
-  font-family: 'Uncial Antiqua', cursive;
-  font-size: 210%;
-  padding-left: 0.7rem;
-  padding-top: 0.35em;
-}
-.blog-title .subtitle {
-  color: #aaaaaa;
-  padding-top: 0.35em;
-  padding-left: 0.7rem;
-}
-
 img {
   width: 100%;
 }
@@ -85,14 +67,31 @@ img.brand {
   vertical-align: middle;
 }
 
+.blog-title, .post-title {
+  margin-bottom: 1.4em;
+}
+.blog-title table, .post-title table {
+  border-spacing: 0.35em;
+}
+.blog-title .title, .post-title .title {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 210%;
+  padding-left: 0.7rem;
+  padding-top: 0.35em;
+}
+.blog-title .subtitle, .post-title .subtitle {
+  color: #aaaaaa;
+  padding-top: 0.35em;
+  padding-left: 0.7rem;
+}
 @media (max-width: 600px) {
-  .blog-title .title {
+  .blog-title .title, .post-title .title {
     font-size: 120%;
   }
-  .blog-title .subtitle {
+  .blog-title .subtitle, .post-title .subtitle {
     font-size: 90%;
   }
-  .blog-title img.brand {
+  .blog-title img.brand,.post-title img.brand {
     width: 3.5em;
     height: 3.5em;
     vertical-align: top;
@@ -106,7 +105,7 @@ img.brand {
 
 .index-post {
   margin-bottom: 0.4em;
-  height: 1.14em;
+  height: 1.28em;
   overflow: hidden;
 }
 .index-post > * {
@@ -161,31 +160,6 @@ img.brand {
   margin-bottom: 2.1em;
 }
 
-.post-title {
-  margin-bottom: 1.75em;
-}
-.post-title .brand {
-  display: inline-block;
-}
-.post-title .title-and-id {
-  display: inline-block;
-  vertical-align: bottom;
-  margin-left: 0.7em;
-}
-.post-title .title {
-  font-family: 'Uncial Antiqua', cursive;
-  font-size: 210%;
-  margin-bottom: 0.14em;
-}
-.post-title .id {
-  color: #aaaaaa;
-}
-@media (max-width: 600px) {
-  .post-title .title {
-    font-size: 110%;
-  }
-}
-
 .all-post h2.title {
   margin-top: 2.1em;
 }
@@ -202,6 +176,18 @@ img.brand {
 .all-post h2.title .t {
   font-family: 'Uncial Antiqua', cursive;
   font-weight: lighter;
+}
+@media (max-width: 600px) {
+  .all-post h2.title > * {
+    display: block;
+    margin-left: 0 !important;
+  }
+  .all-post h2.title > .t {
+    margin: 0.35em 0;
+  }
+  .all-post h2.title > .tags {
+    font-size: 60%;
+  }
 }
 
 body.post div.brand {
