@@ -64,7 +64,9 @@ vars['ALL_TAGS'] = vars['all_tags']
   .collect { |tag| tag_layout.substitute({ tag: tag }) }
   .join(' ')
 vars['description'] =
-  'beers and dragons and gamery'
+  vars['blog']['title']
+vars['twitter'] =
+  { title: vars['blog']['title'], description: vars['blog']['subtitle'] }
 
 layout = File.read('layouts/all.html')
 content = layout.substitute(vars)

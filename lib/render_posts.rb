@@ -49,6 +49,9 @@ Dir['posts/*.md'].sort.each do |path|
       .first
       .gsub('"', "'")
 
+    vars['twitter'] =
+      { title: vars['title'], description: vars['description'] }
+
     content = post_layout.substitute(vars)
 
     f.print(content)
