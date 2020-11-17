@@ -35,24 +35,30 @@ Dir['posts/*.md'].sort.each do |path|
 
     vars, content = Blog.load_post(path)
 
-    vars['CONTENT'] =
-      Blog.md_render(content.substitute(vars))
+    sc = content.substitute(vars)
+
+    vars['CONTENT'] = Blog.md_render(sc)
 
     vars['TAGS'] = vars['tags']
       .collect { |tag| tag_layout.substitute({ tag: tag }) }
       .join(' ')
 
-    vars['description'] = content
-      .split("\n")
-      .select { |l| l.length > 0 }
-      .reject { |l| l.match(/^(#|<)/) }
-      .first
+    vars['description'] = Blog.md_render(sc, mode: 'text')
+      .split("\n")[1..-1].join("\n")
+      .gsub(/\([^\)]+\)/, '')
+      .gsub(/ \./, '.')
       .gsub('"', "'")
+      .split(/(<|\n)/).first
 
     vars['twitter'] =
-      { title: vars['title'],
-        description: vars['description'],
-        image: vars['image'] || vars['blog']['image'] }
+      { title:
+          vars['title'],
+        description:
+          vars['description'],
+        image:
+          vars['image'] ?
+            File.join(vars['blog']['uri'], vars['image']) :
+            vars['blog']['image'] }
 
     content = post_layout.substitute(vars)
 
