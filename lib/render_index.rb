@@ -68,7 +68,9 @@ vars['ALL_TAGS'] = vars['all_tags']
 vars['description'] =
   vars['blog']['title']
 vars['twitter'] =
-  { title: vars['blog']['title'], description: vars['blog']['subtitle'] }
+  { title: vars['blog']['title'],
+    description: vars['blog']['subtitle'],
+    image: vars['blog']['image'] }
 
 layout = File.read('layouts/index.html')
 content = layout.substitute(vars)

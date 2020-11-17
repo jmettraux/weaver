@@ -31,7 +31,9 @@ vars = Blog.merge_vars({})
 vars['description'] =
   vars['blog']['title']
 vars['twitter'] =
-  { title: vars['blog']['title'], description: vars['blog']['subtitle'] }
+  { title: vars['blog']['title'],
+    description: vars['blog']['subtitle'],
+    image: vars['blog']['image'] }
 
 content = layout.substitute(vars)
 
