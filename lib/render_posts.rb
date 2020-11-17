@@ -42,6 +42,13 @@ Dir['posts/*.md'].sort.each do |path|
       .collect { |tag| tag_layout.substitute({ tag: tag }) }
       .join(' ')
 
+    vars['description'] = content
+      .split("\n")
+      .select { |l| l.length > 0 }
+      .reject { |l| l.match(/^(#|<)/) }
+      .first
+      .gsub('"', "'")
+
     content = post_layout.substitute(vars)
 
     f.print(content)

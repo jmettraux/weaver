@@ -55,10 +55,16 @@ vars = Blog.merge_vars({})
 
 vars['CONTENT'] = posts.join("\n")
 
-vars['all_tags'] = all_tags.uniq.sort
+vars['all_tags'] = all_tags
+  .uniq
+  .sort
+#vars['stags'] = vars['all_tags']
+#  .join(' ')
 vars['ALL_TAGS'] = vars['all_tags']
   .collect { |tag| tag_layout.substitute({ tag: tag }) }
   .join(' ')
+vars['description'] =
+  'beers and dragons and gamery'
 
 layout = File.read('layouts/all.html')
 content = layout.substitute(vars)

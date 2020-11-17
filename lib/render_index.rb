@@ -63,6 +63,8 @@ vars['all_tags'] = all_tags.uniq.sort
 vars['ALL_TAGS'] = vars['all_tags']
   .collect { |tag| tag_layout.substitute({ tag: tag }) }
   .join(' ')
+vars['description'] =
+  'beers and dragons and gamery'
 
 layout = File.read('layouts/index.html')
 content = layout.substitute(vars)
