@@ -1,5 +1,5 @@
 
-render: index all posts copyright atom
+render: index all posts copyright atom sitemap
 c: render
 
 #rp: render publish
@@ -14,6 +14,8 @@ copyright:
 	bundle exec ruby -Ilib lib/render_copyright.rb
 atom:
 	bundle exec ruby -Ilib lib/render_atom.rb
+sitemap:
+	bundle exec ruby -Ilib lib/render_sitemap.rb
 
 W:
 	vim -c ":Vt posts/"

@@ -75,6 +75,19 @@ class Array
   end
 end
 
+class Time
+
+  def to_www_s
+
+    strftime('%FT%T%z')
+  end
+
+  def to_utc_www_s
+
+    dup.utc.strftime('%FT%TZ')
+  end
+end
+
 module Blog
 
   @html_renderer =

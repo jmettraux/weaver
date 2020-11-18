@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  https://www.sitemaps.org/protocol.html
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url><loc>https://weaver.skepti.ch/index.html</loc>
+  <lastmod>${lastmod}</lastmod></url>
+<url><loc>https://weaver.skepti.ch/all.html</loc>
+  <lastmod>${lastmod}</lastmod></url>
+
+${CONTENT}
+
+</urlset>
+
