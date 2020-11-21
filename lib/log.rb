@@ -35,9 +35,13 @@ end
 sta = out[0].match(/\[(.+)\]/)[1].gsub(/[-:]/, '').gsub(/[^0-9]/, '_')[0, 13]
 edn = out[-1].match(/\[(.+)\]/)[1].gsub(/[-:]/, '').gsub(/[^0-9]/, '_')[0, 13]
 
+CITIES.values.each { |c| c['host'] = HOSTS[c['ip']] }
+
 File.open(city_fn, 'wb') do |f|
   f.puts(YAML.dump(CITIES))
 end
+puts "#{CITIES.size} cities"
+puts "#{HOSTS.size} hosts"
 
 fn = "tmp/weaver__#{sta}__#{edn}.log"
 
@@ -45,5 +49,5 @@ File.open(fn, 'wb') do |f|
   out.each { |l| f.puts(l) }
 end
 
-puts "#{File.exist?(fn) ? 'over' : ''}wrote #{fn}"
+puts "#{File.exist?(fn) ? 'over' : ''}wrote #{fn}, #{out.size} requests"
 
