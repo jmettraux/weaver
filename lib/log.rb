@@ -3,6 +3,7 @@ require 'time'
 require 'json'
 require 'yaml'
 require 'open-uri'
+require 'fileutils'
 
 city_fn = 'tmp/cities.yaml'
 city_yaml = YAML.load_file(city_fn) rescue {}
@@ -47,6 +48,11 @@ fn = "tmp/weaver__#{sta}__#{edn}.log"
 
 File.open(fn, 'wb') do |f|
   out.each { |l| f.puts(l) }
+end
+
+Dir["tmp/weaver__#{sta}__*.log"].sort[0..-2].each do |pa|
+  FileUtils.rm_f(pa)
+  puts "remove #{pa}"
 end
 
 puts "#{File.exist?(fn) ? 'over' : ''}wrote #{fn}, #{out.size} requests"
