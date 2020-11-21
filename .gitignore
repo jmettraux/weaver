@@ -13,4 +13,5 @@ out/atom.xml
 out/sitemap.xml
 
 tmp/*.log
+tmp/cities.yaml
 
