@@ -102,6 +102,9 @@ img.brand {
   margin-top: 1.4em;
   margin-bottom: 1.4em;
 }
+#index h2 a {
+  text-decoration: none;
+}
 
 .index-post {
   margin-bottom: 0.4em;
