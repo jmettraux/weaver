@@ -289,6 +289,10 @@ img.screenshot {
   font-family: inherit;
 }
 
+.all-post h2.title a {
+  text-decoration: none;
+}
+
 iframe.speakerdeck-iframe {
   margin-bottom: 1.4em !important;
 }

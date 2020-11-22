@@ -1,16 +1,10 @@
 
 <div id="${id}" class="post all-post ${ctags}">
-  <h2 class="title">
-    <span class="id"><a href="${id}.html?t=${_title}">${_id}</a></span>
-    <span class="t">${title}</span>
-    <span class="tags">${TAGS}</span>
-  </h2>
-  ${CONTENT}
-  <!--
-  <p class="links">
-    <a href="${id}.html">.html</a>
-    <a href="all.html#${id}">#</a>
-  </p>
-  -->
+<h2 class="title">
+<span class="id"><a href="${id}.html?t=${_title}">${_id}</a></span>
+<span class="t"><a href="${id}.html?t=${_title}">${title}</a></span>
+<span class="tags">${TAGS}</span>
+</h2>
+${CONTENT}
 </div>
 
