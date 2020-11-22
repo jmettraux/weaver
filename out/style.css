@@ -303,10 +303,12 @@ li {
 figure.left {
   float: left;
   margin-right: 0.49em;
+  width: 35%;
 }
 figure.right {
   float: right;
   margin-left: 0.49em;
+  width: 35%;
 }
 figcaption {
   color: #aaaaaa;
@@ -314,4 +316,12 @@ figcaption {
 }
 figcaption a { color: #aaaaaa; }
 figcaption a:visited { color: #aaaaaa; }
+
+@media (max-width: 600px) {
+  figure.left, figure.right {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 0.49em;
+  }
+}
 
