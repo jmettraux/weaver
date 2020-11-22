@@ -27,10 +27,10 @@ STDIN.readlines.each do |l|
   l = l.strip
   m = l.match(/^[^ ]+ ([^ ]+) /)
   a = HOSTS[m[1]]
-  c = CITIES[m[1]]; co = c['country_code']; ci = c['city']
+  c = CITIES[m[1]]; co = c['country_code']; re = c['region_code']; ci = c['city']
   l = l.gsub(/\[[^\]]+\]/) { |x|
     '[' + Time.parse(x[1..-2].sub(':', ' ')).localtime.to_s + ']' }
-  out << "#{a} #{ci}|#{co} #{l.split(/\s+/)[1..-1].join(' ')}"
+  out << "#{a} #{ci}|#{re}|#{co} #{l.split(/\s+/)[1..-1].join(' ')}"
 end
 
 sta = out[0].match(/\[(.+)\]/)[1].gsub(/[-:]/, '').gsub(/[^0-9]/, '_')[0, 13]
