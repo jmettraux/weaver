@@ -33,7 +33,7 @@ posts =
 
     vars, content = Blog.load_post(path)
 
-    pa = path.split('/', 2)[1].gsub(/\.md\A/, '.html')
+    pa = File.basename(path, '.md') + '.html'
     pa = File.join(vars['blog']['uri'], pa)
     pa = pa + '?t=' + vars['_title'] + '&amp;s=smap'
 
