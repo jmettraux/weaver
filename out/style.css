@@ -105,6 +105,8 @@ img.brand {
 #index h2 a {
   text-decoration: none;
 }
+#index h2 a:active { color: black; }
+#index h2 a:link { color: black; }
 
 .index-post {
   margin-bottom: 0.4em;
@@ -292,6 +294,8 @@ img.screenshot {
 .all-post h2.title a {
   text-decoration: none;
 }
+.all-post h2.title a:active { color: black; }
+.all-post h2.title a:link { color: black; }
 
 iframe.speakerdeck-iframe {
   margin-bottom: 1.4em !important;
