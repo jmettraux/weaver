@@ -316,12 +316,12 @@ li {
 
 figure.left {
   float: left;
-  margin-right: 0.49em;
+  margin-right: 0.56em;
   max-width: 35%;
 }
 figure.right {
   float: right;
-  margin-left: 0.49em;
+  margin-left: 0.56em;
   max-width: 35%;
 }
 figcaption {
