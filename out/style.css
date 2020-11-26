@@ -316,12 +316,12 @@ li {
 
 figure.left {
   float: left;
-  margin-right: 0.56em;
+  margin-right: 0.63em;
   max-width: 35%;
 }
 figure.right {
   float: right;
-  margin-left: 0.56em;
+  margin-left: 0.63em;
   max-width: 35%;
 }
 figcaption {
@@ -337,6 +337,8 @@ figcaption a:visited { color: #aaaaaa; }
     margin: 0;
     margin-bottom: 0.49em;
   }
+  figure.left { margin-right: 0.56em; }
+  figure.right { margin-left: 0.56em; }
 }
 
 img.brand:hover {
