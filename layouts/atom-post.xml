@@ -1,7 +1,7 @@
 
 <entry>
 <title>${title}</title>
-<link href="${blog.uri}/${id}.html?t=${_title}&s=ax" />
+<link href="${blog.uri}/${id}.html?t=${_title}&amp;s=ax" />
 <updated>${date}</updated>
 <id>${blog.uri}/${id}.html</id>
 <content type="xhtml">

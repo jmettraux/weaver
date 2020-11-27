@@ -5,7 +5,7 @@
 <title>${blog.title}</title>
 <link href="${blog.uri}/atom.xml" rel="self" />
 <updated>${Time.now.strftime('%FT%T%:z')}</updated>
-<id>${blog.uri}</id>
+<id>${blog.uri}/</id>
 <author>
 <name>${blog.author.name}</name>
 <email>${blog.author.email}</email>
