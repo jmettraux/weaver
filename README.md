@@ -23,7 +23,7 @@ This blog uses:
 
 ## atom.xml validation
 
-[https://validator.w3.org/feed/check.cgi?url=http%3A%2F%2Flambda.io%2Fjmettraux%2Fatom.xml](https://validator.w3.org/feed/check.cgi?url=http%3A%2F%2Flambda.io%2Fjmettraux%2Fatom.xml)
+[https://validator.w3.org/feed/check.cgi?url=http%3A%2F%2Fweaver.skepti.ch%2Fatom.xml](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fweaver.skepti.ch%2Fatom.xml)
 
 
 ## Nokogiri on OpenBSD
