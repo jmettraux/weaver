@@ -330,6 +330,7 @@ figure img {
 figcaption {
   color: #aaaaaa;
   margin-top: 0.14em;
+  margin-bottom: 0.21em;
 }
 figcaption a { color: #aaaaaa; }
 figcaption a:visited { color: #aaaaaa; }
