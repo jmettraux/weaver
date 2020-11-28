@@ -43,12 +43,19 @@ Dir['posts/*.md'].sort.each do |path|
       .collect { |tag| tag_layout.substitute({ tag: tag }) }
       .join(' ')
 
-    vars['description'] = Blog.md_render(sc, mode: 'text')
-      .split("\n")[1..-1].join("\n")
-      .gsub(/\([^\)]+\)/, '')
-      .gsub(/ \./, '.')
-      .gsub('"', "'")
-      .split(/(<|\n)/).first
+    ct = content
+      .split("\n")
+      .reject { |l| l == '' }
+      .reject { |l| l.match(/^(#|\s*<|-->)/) }
+      .take(2)
+      .join("\n")
+    vars['description'] = Blog
+      .md_render(ct.substitute(vars), mode: 'text', index: true)
+      .gsub(/ \(https?:[^)]+\)/, '')
+      .strip
+#puts "v" * 80
+#pp ct
+#puts "^" * 80
 
     vars['twitter'] =
       { title:
@@ -60,9 +67,7 @@ Dir['posts/*.md'].sort.each do |path|
             File.join(vars['blog']['uri'], vars['image']) :
             vars['blog']['image'] }
 
-    content = post_layout.substitute(vars)
-
-    f.print(content)
+    f.print(post_layout.substitute(vars))
   }
 
   puts ". wrote #{fn}"
