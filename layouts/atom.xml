@@ -3,7 +3,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 <title>${blog.title}</title>
-<link href="${blog.uri}/atom.xml" rel="self" />
+<link href="${blog.uri}/atom.xml" rel="self" type="application/atom+xml" />
+<link href="${blog.uri}/" rel="alternate" type="text/html" />
 <updated>${Time.now.strftime('%FT%T%:z')}</updated>
 <id>${blog.uri}/</id>
 <author>
