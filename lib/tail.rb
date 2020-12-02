@@ -28,6 +28,12 @@ STDIN.each_line do |l|
   l = l.strip
 
   m = l.match(/^[^ ]+ ([^ ]+) /)
+
+  unless m
+    puts if l == ''
+    next
+  end # so that I can hit Enter to space output...
+
   a = HOSTS[m[1]]
   c = CITIES[m[1]]; co = c['country_code']; re = c['region_code']; ci = c['city']
 
