@@ -48,6 +48,8 @@ redate:
 
 log:
 	ssh -t shooto cat /var/www/logs/weaver_access.log | ruby lib/log.rb
+tail:
+	ssh -t shooto tail -f /var/www/logs/weaver_access.log | ruby lib/tail.rb
 
 
 .PHONY: backup posts publish redate serve log
