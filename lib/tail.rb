@@ -40,7 +40,7 @@ STDIN.each_line do |l|
   l = l.gsub(/\[[^\]]+\]/) { |x|
     '[' + Time.parse(x[1..-2].sub(':', ' ')).localtime.to_s + ']' }
   l = l
-    .gsub(/" (\d{3}) (\d)/) { |x| "\" #{CG}999#{CR} #{x[-2..-1]}" }
+    .gsub(/" (\d{3}) (\d)/) { |x| "\" #{CG}#{x[2, 3]}#{CR} #{x[-2..-1]}" }
     .gsub(/"(GET|HEAD) [^\s]+ HTTP\/[^"]+"/) { |x| "#{CY}#{x}#{CR}" }
 
   print "#{CB}#{a} #{ci}|#{re}|#{co}#{CR} #{l.split(/\s+/)[1..-1].join(' ')}\n\r"
