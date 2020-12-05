@@ -34,7 +34,8 @@ publish:
 p: publish
 
 serve:
-	ruby -run -ehttpd out/ -p7000
+	#ruby -run -ehttpd out/ -p7000
+	bundle exec ruby -Ilib lib/serve.rb
 s: serve
 browse:
 	open http://127.0.0.1:7000
