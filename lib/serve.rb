@@ -5,22 +5,19 @@ require 'webrick'
 renderer =
   Thread.new do
 
-    digest = nil
+    last_mtime = nil
 
     loop do
       begin
 
-        d1 = Dir['posts/*.md']
-          .sort
-          .collect { |pa| [ pa, File.mtime(pa).to_f.to_s ].join(' ') }
-          .join("\n")
+        mtime = Dir['posts/*.md'].collect { |pa| File.mtime(pa).to_f }.max
 
-        if d1 != digest
+        if mtime != last_mtime
           puts 'rendering...'
           load('lib/render_posts.rb')
-          digest = d1
+          last_mtime = mtime
         else
-          sleep 1
+          sleep 3.5
         end
 
       rescue => err
