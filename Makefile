@@ -33,13 +33,12 @@ publish:
       out/ shooto:/var/www/htdocs/weaver.skepti.ch/
 p: publish
 
+Serve: render
+	ruby -run -ehttpd out/ -p7000
 serve:
-	#ruby -run -ehttpd out/ -p7000
 	bundle exec ruby -Ilib lib/serve.rb
+S: Serve
 s: serve
-browse:
-	open http://127.0.0.1:7000
-b: browse
 
 redate:
 	bundle exec ruby -Ilib lib/redate_post.rb posts/`ls -1 -t posts/ | head -1`
