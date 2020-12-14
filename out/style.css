@@ -324,6 +324,9 @@ figure.right {
   margin-left: 0.63em;
   max-width: 35%;
 }
+figure.banner {
+  width: 100%;
+}
 figure img {
   border: 1px solid lightgrey;
 }
@@ -334,6 +337,10 @@ figcaption {
 }
 figcaption a { color: #aaaaaa; }
 figcaption a:visited { color: #aaaaaa; }
+figure.banner figcaption {
+  margin-bottom: 0.77em;
+  text-align: right;
+}
 
 @media (max-width: 600px) {
   figure.left, figure.right {
