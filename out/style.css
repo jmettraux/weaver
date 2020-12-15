@@ -341,6 +341,9 @@ figure.banner figcaption {
   margin-bottom: 0.77em;
   text-align: right;
 }
+figure.banner img {
+  width: 100%;
+}
 
 @media (max-width: 600px) {
   figure.left, figure.right {
