@@ -52,6 +52,7 @@ Dir['posts/*.md'].sort.each do |path|
     vars['description'] = Blog
       .md_render(ct.substitute(vars), mode: 'text', index: true)
       .gsub(/ \(https?:[^)]+\)/, '')
+      .gsub(/"/, '\"')
       .strip
 #puts "v" * 80
 #pp ct
