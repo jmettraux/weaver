@@ -58,15 +58,15 @@ Dir['posts/*.md'].sort.each do |path|
 #pp ct
 #puts "^" * 80
 
-    vars['twitter'] =
-      { title:
-          vars['title'],
-        description:
-          vars['description'],
-        image:
-          vars['image'] ?
-            File.join(vars['blog']['uri'], vars['image']) :
-            vars['blog']['image'] }
+    timg = vars['twitter_image'] || vars['image']
+
+    vars['twitter'] = {
+      title:
+        vars['title'],
+      description:
+        vars['description'],
+      image:
+        timg ? File.join(vars['blog']['uri'], timg) : vars['blog']['image'] }
 
     f.print(post_layout.substitute(vars))
   }
