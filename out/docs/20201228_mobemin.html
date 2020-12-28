@@ -26212,11 +26212,11 @@ function setViewBox(x, y, w, h) {
 
 function findHex(x, y) {
 
-  var xy = '' + x + ',' + y;
+  //var xy = '' + x + ',' + y;
 
-  return elts(svg, 'use[href="#h"]')
-    .find(function(h) {
-      return h.getAttribute('data-ll').split(' ')[0] === xy; });
+  return elt(svg, '#h_' + x + '_' + y);
+    //.find(function(h) {
+    //  return h.getAttribute('data-ll').split(' ')[0] === xy; });
 }
 
 function kuEsc(ev) {
@@ -26352,7 +26352,6 @@ function locate(ev) {
 var updateMenuText = function(ta) {
 
   var h = window._hexes[ta.id];
-//clog(h);
   var t = ta.getAttribute('data-t') || null;
 
   var x = '0.0', y = '0.0'; try {
@@ -26537,8 +26536,10 @@ function setNorthwest(ev) {
 
 function getXy(hexe) {
 
-  var xy = hexe.getAttribute('data-ll').split(' ')[0].split(',');
-  return { x: parseInt(xy[0], 10), y: parseInt(xy[1], 10) };
+  //var xy = hexe.getAttribute('data-ll').split(' ')[0].split(',');
+  //return { x: parseInt(xy[0], 10), y: parseInt(xy[1], 10) };
+  var h = window._hexes[hexe.id];
+  return h;
 };
 
 window.onhashchange = setNorthwest;
