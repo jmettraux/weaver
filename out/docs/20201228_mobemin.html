@@ -202,6 +202,7 @@ path.red2 { stroke: pink; stroke-width: 21; }
 */
 
 </style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%22-10%20-10%20130%20130%22%3E%0A%3Cstyle%3E%0A%23h%20%7B%20fill:%20none;%20stroke:%20grey;%20stroke-width:%2011;%20stroke-linecap:%20round;%20%7D%0Atext%20%7B%20font-size:%205.6em;%20fill:%20grey;%20stroke:%20grey;%20font-family:%20Helvetica;%20%7D%0A%3C/style%3E%0A%3Ctext%20x=%2219%22%20y=%2287%22%3EA%3C/text%3E%0A%3Cpath%20id=%22h%22%20d=%22M%2050%203.735026918962575%20L%20100%2032.867513459481287%20L%20100%2088.867513459481287%20L%2050%20117.735026918962575%20L%200%2088.867513459481287%20L%200%2032.867513459481287%20L%2050%203.735026918962575%22/%3E%0A%3C/svg%3E%0A" type="image/svg+xml"/>
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/></head>
 <body>
 <svg id="svg-map" viewBox="-50 -50 10000 10000" preserveAspectRatio="xMinYMin slice" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
@@ -26208,15 +26209,19 @@ function setViewBox(x, y, w, h) {
   h = Math.ceil(h);
 
   svg.setAttribute('viewBox', '' + x + ' ' + y + ' ' + w + ' ' + h);
+
+  svg.classList.remove('z100', 'z75', 'z50', 'z25', 'z0');
+    //
+  if (w > window._east) { svg.classList.add('z100'); }
+  else if (w > window._east * 0.75) { svg.classList.add('z75'); }
+  else if (w > window._east * 0.5) { svg.classList.add('z50'); }
+  else if (w > window._east * 0.25) { svg.classList.add('z25'); }
+  else { svg.classList.add('z0'); }
 };
 
 function findHex(x, y) {
 
-  //var xy = '' + x + ',' + y;
-
   return elt(svg, '#h_' + x + '_' + y);
-    //.find(function(h) {
-    //  return h.getAttribute('data-ll').split(' ')[0] === xy; });
 }
 
 function kuEsc(ev) {
@@ -26521,7 +26526,8 @@ elts('#menu .col .zoom').forEach(function(e) {
 function setNorthwest(ev) {
 
   var m = ev.newURL.match(/#(.+)/);
-  if ( ! m) return;
+
+  if ( ! m) return setViewBox(null, null);
 
   var es = m[1].split(/[,\/]/);
 
@@ -26536,10 +26542,7 @@ function setNorthwest(ev) {
 
 function getXy(hexe) {
 
-  //var xy = hexe.getAttribute('data-ll').split(' ')[0].split(',');
-  //return { x: parseInt(xy[0], 10), y: parseInt(xy[1], 10) };
-  var h = window._hexes[hexe.id];
-  return h;
+  return window._hexes[hexe.id];
 };
 
 window.onhashchange = setNorthwest;
