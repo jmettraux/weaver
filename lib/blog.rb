@@ -119,10 +119,10 @@ module Blog
 
     doc.css('script').each do |script|
 
-      if target = script['data-lambda-io-target']
-        script.add_next_sibling(
-          "<a href=\"#{target}\">(presentation slides at #{target})</a>")
-      end
+      #if target = script['data-lambda-io-target']
+      #  script.add_next_sibling(
+      #    "<a href=\"#{target}\">(presentation slides at #{target})</a>")
+      #end
 
       script.remove
     end

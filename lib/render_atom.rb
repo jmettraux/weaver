@@ -49,7 +49,7 @@ posts =
     vars['TAGS'] =
       vars['tags'].collect { |t|
         %{
-<category scheme="http://lambda.io/jmettraux/tags/" term="#{t}" />
+<category scheme="https://weaver.skepti.ch/tags/" term="#{t}" />
         }.strip
       }.join("\n")
 
