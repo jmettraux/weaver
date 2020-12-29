@@ -54,9 +54,9 @@ Dir['posts/*.md'].sort.each do |path|
       .gsub(/ \(https?:[^)]+\)/, '')
       .gsub(/"/, '\"')
       .strip
-#puts "v" * 80
+#puts; puts 'v' * 80
 #pp ct
-#puts "^" * 80
+#puts '^' * 80; puts
 
     timg = vars['twitter_image'] || vars['image']
 
