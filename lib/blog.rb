@@ -127,6 +127,11 @@ module Blog
       script.remove
     end
 
+    doc.css('style').each do |style|
+
+      style.remove
+    end
+
     doc.at_css('body').to_xhtml[6..-8]
   end
 
