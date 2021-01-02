@@ -1,5 +1,6 @@
 User-agent: AhrefsBot
 User-agent: Adsbot
+User-agent: x28-job-bot
 Disallow: /
 
 User-agent: *
