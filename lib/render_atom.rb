@@ -49,6 +49,7 @@ posts =
     vars['summary'] = Blog
       .md_render(ct.substitute(vars), mode: 'text', index: true)
       .gsub(/ \(https?:[^)]+\)/, '')
+      .gsub(/&(?!amp;)/, '&amp;')
       .gsub(/"/, '\"')
       .strip
 #puts; puts 'v' * 80
