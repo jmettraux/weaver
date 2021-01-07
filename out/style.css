@@ -359,3 +359,15 @@ img.brand:hover {
   opacity: 0.7;
 }
 
+audio {
+  height: 1.4rem;
+  width: 35%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.7em;
+}
+audio::-webkit-media-controls-enclosure {
+  border-radius: 0px;
+  background-color: lightgrey;
+}
+

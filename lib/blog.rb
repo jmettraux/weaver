@@ -127,6 +127,11 @@ module Blog
       script.remove
     end
 
+    doc.css('audio').each do |audio|
+
+      audio.remove_attribute('controls')
+    end
+
     doc.css('style').each do |style|
 
       style.remove
