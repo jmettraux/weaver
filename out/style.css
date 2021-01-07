@@ -110,6 +110,7 @@ img.brand {
 }
 #index h2 a:active { color: black; }
 #index h2 a:link { color: black; }
+#index .tags { margin-right: 0.7em; }
 
 .index-post {
   margin-bottom: 0.4em;
