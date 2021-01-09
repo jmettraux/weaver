@@ -373,3 +373,8 @@ audio::-webkit-media-controls-enclosure {
   background-color: lightgrey;
 }
 
+hr {
+  margin-top: 1.1em;
+  margin-bottom: 1.1em;
+}
+
