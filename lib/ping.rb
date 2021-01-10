@@ -12,7 +12,11 @@ EXCLUSION_LIST = %w[
 
 dry = ! ARGV.include?('--not-dry')
 post = ENV['POST'] || Dir['posts/*.md'].sort.last
-uri = "https://weaver.skepti.ch/#{post.match(/(\d{8})/)[1]}.html?t=xxx"
+date = post.match(/(\d{8})/)[1]
+mdown = File.read(post)
+title = mdown.match(/^## ([^\n\r]+)/)[1]
+_title = title.gsub(/[^a-zA-Z0-9]/, '_')
+uri = "https://weaver.skepti.ch/#{date}.html?f=wm&t=#{_title}"
 
 
 class LinkRender < Redcarpet::Render::Base
@@ -22,7 +26,7 @@ class LinkRender < Redcarpet::Render::Base
 end
 
 lrender = LinkRender.new
-Redcarpet::Markdown.new(lrender, {}).render(File.read(post))
+Redcarpet::Markdown.new(lrender, {}).render(mdown)
 
 links = lrender.links
   .select { |href, _, _| ! EXCLUSION_LIST.find { |s| href.start_with?(s) } }
@@ -33,7 +37,7 @@ links.each do |link, title, content|
   puts "link: #{link}"
 
   res = Scorn.get(link)
-  #pp res._response._headers
+  #pp res._response._headers # <-- the webmention link might hide there!
   next unless res._response._c == 200
 
   doc = Nokogiri::HTML(res)
@@ -46,19 +50,19 @@ links.each do |link, title, content|
     href = wml[:href]
     puts "  webmention: #{href}"
 
+    puts "    post to: #{href}"
+    puts "    source: #{uri}"
+    puts "    target: #{link}"
+
     if dry
-      puts "    post to: #{href}"
-      puts "    source: #{uri}"
-      puts "    target: #{link}"
+      # do nothing
     else
+      r = Scorn.post(href, data: { source: uri, target: link })
+      res = r._response
+      p r
+      p [ res._c, res._sta ]
+      pp res._headers
     end
   end
 end
 
-
-#Scorn.post(
-#  'https://webmention.io/weaver.skepti.ch/webmention',
-#  data: {
-#    source: 'http://foo.operati.ca/test.html',
-#    target: 'https://weaver.skepti.ch/20210109.html?f=foo' },
-#  debug: $stderr)
