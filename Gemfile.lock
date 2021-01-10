@@ -7,7 +7,7 @@ GEM
       racc (~> 1.4)
     racc (1.5.2)
     redcarpet (3.5.1)
-    scorn (0.2.0)
+    scorn (0.3.0)
 
 PLATFORMS
   ruby
