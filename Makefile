@@ -46,14 +46,16 @@ redate:
 #backup:
 #	cd .. && tar cjvf ~/Dropbox/backup/blog_`date +%Y%m%d_%H%M%S`.tbz blog/
 
+ping:
+	bundle exec ruby -Ilib lib/ping.rb --dry
+PING:
+	bundle exec ruby -Ilib lib/ping.rb --not-dry
+
 log:
 	ssh -t shooto cat /var/www/logs/weaver_access.log | ruby lib/log.rb
 tail:
 	ssh -t shooto tail -f /var/www/logs/weaver_access.log | ruby lib/tail.rb
 
 
-.PHONY: backup posts publish redate serve log
-
-
-# TODO: leverage make, don't rewrite each time
+.PHONY: posts
 
