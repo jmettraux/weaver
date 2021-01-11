@@ -378,3 +378,6 @@ hr {
   margin-bottom: 1.1em;
 }
 
+.no-border img { border: 0; }
+.half-width { min-width: 50%; }
+
