@@ -4,7 +4,15 @@
   <div class="dt-published">${_id}</div>
   <div class="dt-updated">${date}</div>
   <div class="p-summary">${twitter.description}</div>
-  <div class="u-url">${blog.uri}/${id}.html</div>
-  <div class="u-uid">${blog.uri}/${id}.html</div>
+  <div class="tags">${meta_tags}</div>
+  <a class="u-photo" href="${twitter.image}">picture</a>
+  <a class="u-url" href="${blog.uri}/${id}.html?s=h-entry&t=${_title}">url</a>
+  <a class="u-uid" href="${blog.uri}/${id}.html">uid</a>
+  <div class="p-author h-card">
+    <p class="p-name">John Mettraux</p>
+    <a class="u-email" href="mailto:jmettraux+weaver@gmail.com"></a>
+    <a class="u-url" href="https://weaver.skepti.ch"></a>
+    <a class="u-photo" href="https://weaver.skepti.ch/images/mettraux.jpg"></a>
+  </div>
 </div>
 
