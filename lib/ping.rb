@@ -57,9 +57,12 @@ links.each do |link, title, content|
     if dry
       # do nothing
     else
-      r = Scorn.post(href, data: { source: uri, target: link })
+      r =
+        File.open('ping_debug.txt', 'wb') do |df|
+          Scorn.post(href, data: { source: uri, target: link }, debug: df)
+        end
+      File.open('ping_out.txt', 'wb') { |rf| rf.write(r) }
       res = r._response
-      p r
       p [ res._c, res._sta ]
       pp res._headers
     end
