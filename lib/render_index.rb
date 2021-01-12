@@ -2,8 +2,8 @@
 require 'blog'
 
 
-post_layout = File.read('layouts/index-post.html')
-tag_layout = File.read('layouts/index-post-tag.html')
+post_partial = File.read('partials/index-post.html')
+tag_partial = File.read('partials/index-post-tag.html')
 
 all_tags = []
 
@@ -25,12 +25,12 @@ posts =
       .collect { |tag| "tag-#{tag}" }
       .join(' ')
     vars['TAGS'] = vars['tags']
-      .collect { |tag| tag_layout.substitute({ tag: tag }) }
+      .collect { |tag| tag_partial.substitute({ tag: tag }) }
       .join(' ')
 
     all_tags.concat(vars['tags'])
 
-    post_layout.substitute(vars)
+    post_partial.substitute(vars)
   end
 
 vars = Blog.merge_vars({})
@@ -41,7 +41,7 @@ vars['all_tags'] = all_tags
   .uniq
   .sort
 vars['ALL_TAGS'] = vars['all_tags']
-  .collect { |tag| tag_layout.substitute({ tag: tag }) }
+  .collect { |tag| tag_partial.substitute({ tag: tag }) }
   .join(' ')
 vars['description'] =
   vars['blog']['title']

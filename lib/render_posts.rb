@@ -3,7 +3,7 @@ require 'blog'
 
 
 post_layout = File.read('layouts/post.html')
-tag_layout = File.read('layouts/post-tag.html')
+tag_partial = File.read('partials/post-tag.html')
 
 Dir['posts/*.md'].sort.each do |path|
 
@@ -18,7 +18,7 @@ Dir['posts/*.md'].sort.each do |path|
     vars['CONTENT'] = Blog.md_render(sc)
 
     vars['TAGS'] = vars['tags']
-      .collect { |tag| tag_layout.substitute({ tag: tag }) }
+      .collect { |tag| tag_partial.substitute({ tag: tag }) }
       .join(' ')
 
     ct = content

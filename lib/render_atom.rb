@@ -5,7 +5,7 @@ require 'redcarpet/render_strip'
 require 'blog'
 
 
-layout = File.read('layouts/atom-post.xml')
+partial = File.read('partials/atom-post.xml')
 
 posts =
   Dir['posts/*.md'].sort.reverse.collect do |path|
@@ -47,7 +47,7 @@ posts =
         }.strip
       }.join("\n")
 
-    layout.substitute(vars).strip
+    partial.substitute(vars).strip
   end
 
 vars = Blog.merge_vars({})

@@ -3,6 +3,8 @@ a:visited { color: black; }
 a:active { color: grey; }
 a:link { color: grey; }
 
+.hidden { display: none; }
+
 #content {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
