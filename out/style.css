@@ -383,3 +383,12 @@ hr {
 .no-border img { border: 0; }
 .half-width { min-width: 50%; }
 
+pre {
+  font-size: 77%;
+  line-height: 0.7rem;
+  background-color: #b0c4de8a;
+  padding: 0.7em;
+  margin-left: 0.7em;
+  white-space: break-spaces;
+}
+
