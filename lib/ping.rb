@@ -36,9 +36,9 @@ links.each do |link, title, content|
   puts "---"
   puts "link: #{link}"
 
-  res = Scorn.get(link)
+  res = link.match?(/^https?:\/\//) ? Scorn.get(link) : nil
   #pp res._response._headers # <-- the webmention link might hide there!
-  next unless res._response._c == 200
+  next unless res && res._response._c == 200
 
   doc = Nokogiri::HTML(res)
 
