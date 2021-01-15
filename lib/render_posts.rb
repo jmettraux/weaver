@@ -34,10 +34,10 @@ Dir['posts/*.md'].sort.each do |path|
     vars['description'] = Blog
       .md_render(ct.substitute(vars), mode: 'text', index: true)
       .gsub(/ \(https?:[^)]+\)/, '')
-      .gsub(/"/, '\"')
+      .gsub(/"/, "'")
       .strip
 #puts; puts 'v' * 80
-#pp ct
+#puts vars['description']
 #puts '^' * 80; puts
 
     timg = vars['twitter_image'] || vars['image']
