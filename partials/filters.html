@@ -1,19 +1,38 @@
 
 <script type="text/javascript">
 
+var onTagChange = function(h) {
+
+  H.forEach('div.post', function(e) {
+
+    if (h === '') { H.remc(e, '.hidden'); return; }
+
+    var tags = H.elts(e, '.tags a')
+      .map(function(a) { return '#' + a.href.split('#').slice(-1)[0]; });
+    if (tags.includes(h)) H.remc(e, '.hidden'); else H.addc(e, '.hidden');
+  });
+}
+
+var onAnchorChange = function(h) {
+
+  //var e = H.elt(h); // <-- no worky, #20201112 is not a valid id it seems :-(
+  var h1 = h.slice(1);
+  var e = H.elts('div.post[id]').find(function(p) { return p.id === h1; });
+  if (e) e.scrollIntoView();
+}
+
+var onHashChange = function() {
+
+  var h = window.location.hash;
+
+  if (h.match(/^#20\d{2}\d{2}\d{2}$/)) onAnchorChange(h);
+  else onTagChange(h);
+};
+
 H.onDocumentReady(function() {
 
-  var m = window.location.search.match(/^\?tags?=([^&]+)/);
-  if (m) {
-    H.forEach('a.all-tags', function(e) { e.style.display = 'initial'; });
-    H.forEach('div.post', function(e) { e.style.display = 'none'; });
-    var tags = m[1].split(',');
-    for (var i = 0, l = tags.length; i < l; i++) {
-      H.forEach('div.post.tag-' + tags[i], function(e) {
-        e.style.display = 'block';
-      });
-    }
-  }
+  window.onhashchange = onHashChange;
+  onHashChange();
 });
 
 </script>
