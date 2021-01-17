@@ -8,7 +8,7 @@ require 'blog'
 partial = File.read('partials/atom-post.xml')
 
 posts =
-  Dir['posts/*.md'].sort.reverse.collect do |path|
+  Dir['posts/*.md'].sort.reverse.take(28).collect do |path|
 
     print " #{path}"
 
