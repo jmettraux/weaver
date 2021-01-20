@@ -69,6 +69,14 @@ img.brand {
   vertical-align: middle;
 }
 
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.1em;
+  margin-bottom: 2.8em;
+  font-size: 77%;
+}
+
 .blog-title, .post-title {
   margin-bottom: 1.4em;
 }
@@ -157,6 +165,13 @@ img.brand {
   }
   .index-post .tags {
     margin: 0.49em 0;
+  }
+  .nav {
+    display: block;
+    width: 100%
+  }
+  .nav .next {
+    text-align: right;
   }
 }
 
