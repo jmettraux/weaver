@@ -56,9 +56,10 @@ paths.each do |path|
       .join("\n")
     vars['description'] = Blog
       .md_render(ct.substitute(vars), mode: 'text', index: true)
-      .gsub(/ \(https?:[^)]+\)/, '')
+      .gsub(/ \([^)]+\)/, '')
       .gsub(/"/, "'")
       .strip
+      #.gsub(/ \(https?:[^)]+\)/, '')
 #puts; puts 'v' * 80
 #puts vars['description']
 #puts '^' * 80; puts
