@@ -38,7 +38,9 @@ STDIN.each_line do |l|
   c = CITIES[m[1]]; co = c['country_code']; re = c['region_code']; ci = c['city']
 
   l = l.gsub(/\[[^\]]+\]/) { |x|
-    '[' + Time.parse(x[1..-2].sub(':', ' ')).localtime.to_s + ']' }
+    t = x[1..-2].sub(':', ' ')
+    t = (Time.parse(t).localtime.to_s rescue t)
+    "[#{t}]" }
   l = l
     .gsub(/" (\d{3}) (\d)/) { |x| "\" #{CG}#{x[2, 3]}#{CR} #{x[-2..-1]}" }
     .gsub(/"(GET|HEAD) [^\s]+ HTTP\/[^"]+"/) { |x| "#{CY}#{x}#{CR}" }
