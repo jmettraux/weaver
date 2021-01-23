@@ -134,6 +134,11 @@ module Blog
     vars['id'] = File.basename(path, '.md')
     vars['tags'] ||= []
 
+    vars['uri'] =
+      File.join(
+        vars['blog']['uri'],
+        "#{vars['id']}.html?t=#{vars['_title']}")
+
     vars['_id'] = vars['id']
     if m = vars['id'].match(/\A(\d{4})(\d{2})(\d{2})\z/)
       vars['_id'] = "#{m[1]}-#{m[2]}-#{m[3]}"

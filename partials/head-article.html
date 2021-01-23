@@ -1,0 +1,5 @@
+
+<meta name="article:published_time" content="${date}">
+<meta name="article:author" content="${blog.uri}">
+${vars.tags.collect do |t| '<meta name="article:tag" content="' + t + '">'; end.join("\n")}
+

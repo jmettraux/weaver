@@ -66,6 +66,16 @@ paths.each do |path|
 
     timg = vars['twitter_image'] || vars['image']
 
+    vars['og'] =
+      { title:
+          vars['title'],
+        type:
+          'article',
+        image:
+          timg ? File.join(vars['blog']['uri'], timg) : vars['blog']['image'],
+        url:
+          vars['uri'] }
+
     vars['twitter'] = {
       title:
         vars['title'],
