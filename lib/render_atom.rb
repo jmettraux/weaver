@@ -26,7 +26,7 @@ posts =
       .join("\n")
     vars['summary'] = Blog
       .md_render(ct.substitute(vars), mode: 'text', index: true)
-      .gsub(/ \(https?:[^)]+\)/, '')
+      .gsub(/ \([^)]+\)/, '')
       .gsub(/&(?!amp;)/, '&amp;')
       .gsub(/"/, '\"')
       .strip
