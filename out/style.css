@@ -333,6 +333,9 @@ li {
   margin-bottom: 0.14em;
 }
 
+figure.left, figure.right {
+  margin-bottom: 0.49em;
+}
 figure.left {
   float: left;
   margin-right: 0.63em;
