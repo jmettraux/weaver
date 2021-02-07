@@ -7,6 +7,8 @@ User-agent: SemrushBot
 User-agent: Barkrowler/0.9
 User-agent: Kraken
 User-agent: oBot
+User-agent: BLEXBot
+User-agent: BLEXBot/1.0
 Disallow: /
 
 User-agent: *
