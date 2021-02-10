@@ -411,3 +411,19 @@ pre {
   white-space: break-spaces;
 }
 
+#content table.data {
+  margin-bottom: 1.4em;
+}
+#content table.data tbody tr:hover {
+  background-color: lightgrey;
+}
+#content table.data th {
+  font-weight: bold;
+  border: 1px solid lightgrey;
+  padding: 0.28em;
+}
+#content table.data td {
+  border: 1px solid lightgrey;
+  padding: 0.28em;
+}
+
