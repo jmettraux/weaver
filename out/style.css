@@ -412,6 +412,7 @@ pre {
 }
 
 #content table.data {
+  margin-left: 0.7em;
   margin-bottom: 1.4em;
 }
 #content table.data tbody tr:hover {
@@ -420,10 +421,10 @@ pre {
 #content table.data th {
   font-weight: bold;
   border: 1px solid lightgrey;
-  padding: 0.28em;
+  padding: 0.28em 0.49em;
 }
 #content table.data td {
   border: 1px solid lightgrey;
-  padding: 0.28em;
+  padding: 0.28em 0.49em;
 }
 
