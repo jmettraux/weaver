@@ -84,10 +84,10 @@ module Blog
 
     r = renderer.render(s)
 
-    if opts[:index] == true
-      r = r.gsub(/\s*<\/?blockquote>\s*/, '"')
-      r = r.gsub(/\s*<\/?h3>\s*/, '')
-    end
+    r = r
+      .gsub(/\s*<\/?blockquote>\s*/, '"')
+      .gsub(/\s*<\/?[^>]+>/, '') \
+        if opts[:index] == true
 
     r
   end

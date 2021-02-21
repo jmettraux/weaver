@@ -413,6 +413,22 @@ pre {
   margin-left: 0.7em;
   white-space: break-spaces;
 }
+pre.left {
+  float: left;
+  font-size: 63%;
+  padding: 0;
+  margin: 0;
+  margin-right: 0.70em;
+  margin-bottom: 0.28em;
+}
+@media (max-width: 600px) {
+  pre.left {
+    font-size: 39%;
+    float: none;
+    margin: 0;
+    margin-bottom: 1.4em;
+  }
+}
 
 #content table.data {
   margin-left: 0.7em;
