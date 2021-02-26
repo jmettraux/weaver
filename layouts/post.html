@@ -15,13 +15,12 @@ ${partial('post-meta.html')}
 ${partial('post-title.html')}
 <div class="nav">
   ${PREV}
-  <div class="index"><a href="/index.html?f=__${id}__${_title}">index ↑</a></div>
+  <div class="index"><a href="/index.html?f=hd__${id}__${_title}">index ↑</a></div>
   ${NEXT}
 </div>
 ${CONTENT}
 <div class="links">
-  <a href="index.html">index</a>
-  <a href="all.html#${id}">all/#${id}</a>
+  <a href="/index.html?f=ft__${id}__${_title}">index↑</a>
   <a href="mailto:jmettraux+weaver${id}@gmail.com">comments</a>
   <!--
   <a href="https://github.com/jmettraux/weaver/tree/master/posts/${id}.md">source</a>

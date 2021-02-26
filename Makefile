@@ -1,13 +1,11 @@
 
-render: index all posts copyright atom sitemap
+render: index posts copyright atom sitemap
 c: render
 
 #rp: render publish
 
 index:
 	bundle exec ruby -Ilib lib/render_index.rb
-all:
-	bundle exec ruby -Ilib lib/render_all.rb
 posts:
 	bundle exec ruby -Ilib lib/render_posts.rb
 copyright:

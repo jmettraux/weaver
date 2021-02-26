@@ -6,8 +6,6 @@
 
 <url><loc>https://weaver.skepti.ch/index.html</loc>
   <lastmod>${lastmod}</lastmod></url>
-<url><loc>https://weaver.skepti.ch/all.html</loc>
-  <lastmod>${lastmod}</lastmod></url>
 
 ${CONTENT}
 
