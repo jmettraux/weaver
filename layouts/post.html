@@ -13,7 +13,11 @@ ${partial('favicon.html')}
 ${partial('post-meta.html')}
 <div id="content" class="e-content">
 ${partial('post-title.html')}
-<div class="nav">${PREV}${NEXT}</div>
+<div class="nav">
+  ${PREV}
+  <div class="index"><a href="/index.html?f=__${id}__${_title}">index ↑</a></div>
+  ${NEXT}
+</div>
 ${CONTENT}
 <div class="links">
   <a href="index.html">index</a>
