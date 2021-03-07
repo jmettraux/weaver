@@ -15,3 +15,5 @@ out/sitemap.xml
 tmp/*.log
 tmp/cities.yaml
 
+var/*
+
