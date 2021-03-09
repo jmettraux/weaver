@@ -86,7 +86,7 @@ module Blog
 
     r = r
       .gsub(/\s*<\/?blockquote>\s*/, '"')
-      .gsub(/\s*<\/?[^>]+>/, '') \
+      .gsub(/\s*<\/?[^>]+>/, ' ') \
         if opts[:index] == true
 
     r
