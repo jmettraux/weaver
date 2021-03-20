@@ -16,7 +16,7 @@ CITIES =
       begin
         URI.open("https://freegeoip.app/json/#{k}").read
       rescue
-        { 'country_code' => 'X', city => 'X' }.to_json
+        { 'country_code' => 'X', 'city' => 'X' }.to_json
       end
     h[k] =
       begin
