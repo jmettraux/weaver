@@ -12,8 +12,18 @@ HOSTS =
   end
 CITIES =
   Hash.new do |h, k|
-    s = URI.open("https://freegeoip.app/json/#{k}").read
-    h[k] = JSON.parse(s) rescue { 'country_code' => '?', 'city' => '?' }
+    s =
+      begin
+        URI.open("https://freegeoip.app/json/#{k}").read
+      rescue
+        { 'country_code' => 'X', city => 'X' }.to_json
+      end
+    h[k] =
+      begin
+        JSON.parse(s)
+      rescue
+        { 'country_code' => '?', 'city' => '?' }
+      end
   end
 
 
