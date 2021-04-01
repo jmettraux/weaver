@@ -10,6 +10,7 @@ User-agent: Kraken
 User-agent: oBot
 User-agent: BLEXBot
 User-agent: BLEXBot/1.0
+User-agent: MTRobot
 Disallow: /
 
 User-agent: *
