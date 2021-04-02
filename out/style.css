@@ -184,7 +184,7 @@ img.brand {
 }
 .post .links {
   margin-top: 2em;
-  margin-bottom: 2.1em;
+  margin-bottom: 3.5em;
 }
 
 .all-post h2.title {
@@ -420,9 +420,23 @@ pre.left {
   margin-right: 0.70em;
   margin-bottom: 0.28em;
 }
+pre.right {
+  float: right;
+  font-size: 70%;
+  padding: 0;
+  margin: 0;
+  margin-left: 0.70em;
+  margin-bottom: 0.28em;
+}
 @media (max-width: 600px) {
   pre.left {
-    font-size: 39%;
+    font-size: 31%;
+    float: none;
+    margin: 0;
+    margin-bottom: 1.4em;
+  }
+  pre.right {
+    font-size: 31%;
     float: none;
     margin: 0;
     margin-bottom: 1.4em;
