@@ -348,6 +348,7 @@ figure.right {
 }
 figure.smaller { max-width: 21%; }
 figure.smallerr { max-width: 19%; }
+figure.larger { max-width: 42%; }
 figure.banner {
   width: 100%;
   margin-bottom: 1.4em;
