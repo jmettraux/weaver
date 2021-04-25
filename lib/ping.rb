@@ -37,7 +37,7 @@ Redcarpet::Markdown.new(lrender, {}).render(mdown)
 links = lrender.links
   .select { |href, _, _|
     href.start_with?('http') &&
-    ! EXCLUSION_LIST.find { |s| href.start_with?(s) || href.index(s) } }
+    ! EXCLUSION_LIST.find { |s| href.index(s) } }
 
 links.each do |link, title, content|
 
