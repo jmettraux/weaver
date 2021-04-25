@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+TYPES = %w[
+  .jpg
+  .png
+  .webp
+  .gif ]
+
+dry =
+  ARGV.include?('-d') || ARGV.include?('--dry')
+fnames =
+  ARGV.select { |a|
+    File.exist?(a) &&
+    TYPES.find { |t| a.end_with?(t) } }
+
+current = Dir['posts/2*.md']
+  .sort
+  .last
+  .gsub(/[^\d]/, '')
+
+fnames.each do |fname|
+  t = "out/images/#{current}_#{fname}"
+  puts " . #{fname} -->\n     #{t}"
+  system("mv #{fname} #{t}") unless dry
+end
+
