@@ -4,10 +4,14 @@ require 'scorn'
 require 'nokogiri'
 
 EXCLUSION_LIST = %w[
+  https://amzn.to/
+  https://en.wikipedia.org
   https://www.drivethrurpg.com
   https://www.youtube.com
   https://www.patreon.com
-  https://www.kickstarter.com ]
+  https://www.kickstarter.com
+  .blogspot.com/
+    ]
 
 
 dry = ! ARGV.include?('--not-dry')
@@ -29,7 +33,9 @@ lrender = LinkRender.new
 Redcarpet::Markdown.new(lrender, {}).render(mdown)
 
 links = lrender.links
-  .select { |href, _, _| ! EXCLUSION_LIST.find { |s| href.start_with?(s) } }
+  .select { |href, _, _|
+    href.start_with?('http') &&
+    ! EXCLUSION_LIST.find { |s| href.start_with?(s) || href.index(s) } }
 
 links.each do |link, title, content|
 
