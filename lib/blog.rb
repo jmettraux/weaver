@@ -144,7 +144,7 @@ module Blog
       vars['_id'] = "#{m[1]}-#{m[2]}-#{m[3]}"
     end
 
-    m = content.match(/src="([^"]+)"/)
+    m = content.match(/src="([^"]+\.(?:jpg|png|gif|webp))"/)
     vars['image'] = m[1] if m
 
     content = rework_text(content)
