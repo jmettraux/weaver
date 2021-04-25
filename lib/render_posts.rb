@@ -12,6 +12,8 @@ paths.each do |path|
 
   fn = 'out/' + File.basename(path, '.md') + '.html'
 
+  next if File.exist?(fn) && (File.mtime(fn) > File.mtime(path))
+
   i = paths.index(path)
   prv = paths[i - 1]
   nxt = paths[i + 1]

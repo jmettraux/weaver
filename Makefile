@@ -44,6 +44,9 @@ redate:
 #backup:
 #	cd .. && tar cjvf ~/Dropbox/backup/blog_`date +%Y%m%d_%H%M%S`.tbz blog/
 
+touch:
+	touch posts/*.md
+
 ping:
 	bundle exec ruby -Ilib lib/ping.rb --dry
 PING:

@@ -17,7 +17,7 @@ renderer =
           load('lib/render_posts.rb')
           last_mtime = mtime
         else
-          sleep 3.5
+          sleep 2.1
         end
 
       rescue => err
