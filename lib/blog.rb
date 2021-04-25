@@ -156,6 +156,9 @@ module Blog
 
     (YAML.load(File.read('blog.yaml')) rescue {})
       .merge(o.is_a?(Hash) ? o : YAML.load(o))
+      .tap { |x|
+        x['blog']['css_mtime'] =
+          File.mtime('out/style.css').strftime('%Y%m%dT%H%M%S') }
   end
 
   def self.rework_text(content)
