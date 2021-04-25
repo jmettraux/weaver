@@ -22,6 +22,8 @@ title = mdown.match(/^## ([^\n\r]+)/)[1]
 _title = title.gsub(/[^a-zA-Z0-9]/, '_')
 uri = "https://weaver.skepti.ch/#{date}.html?f=wm&t=#{_title}"
 
+seen = []
+
 
 class LinkRender < Redcarpet::Render::Base
   attr_reader :links
@@ -38,6 +40,8 @@ links = lrender.links
     ! EXCLUSION_LIST.find { |s| href.start_with?(s) || href.index(s) } }
 
 links.each do |link, title, content|
+
+  next if seen.include?(link)
 
   puts "---"
   puts "link: #{link}"
@@ -73,5 +77,7 @@ links.each do |link, title, content|
       pp res._headers
     end
   end
+
+  seen << link
 end
 
