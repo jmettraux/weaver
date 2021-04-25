@@ -28,10 +28,14 @@ posts =
       .collect { |tag| tag_partial.substitute({ tag: tag }) }
       .join(' ')
 
+    vars['IMAGE'] =
+      vars['twitter_image'] || vars['image'] || vars['blog']['rimage']
+
     all_tags.concat(vars['tags'])
 
     post_partial.substitute(vars)
   end
+
 
 vars = Blog.merge_vars({})
 

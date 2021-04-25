@@ -7,7 +7,7 @@ var onTagChange = function(h) {
 
     if (h === '') { H.remc(e, '.hidden'); return; }
 
-    var tags = H.elts(e, '.tags a')
+    var tags = H.elts(e, '.post-tags a')
       .map(function(a) { return '#' + a.href.split('#').slice(-1)[0]; });
     if (tags.includes(h)) H.remc(e, '.hidden'); else H.addc(e, '.hidden');
   });

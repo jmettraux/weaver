@@ -72,6 +72,15 @@ img.brand {
   border-radius: 50%;
   vertical-align: middle;
 }
+img.post-image {
+  width: 4.9em;
+  height: 4.9em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid darkgrey;
+}
 
 .nav {
   display: flex;
@@ -128,56 +137,37 @@ img.brand {
 #index .tags { margin-right: 0.28em; }
 
 .index-post {
-  margin-bottom: 0.4em;
-  height: 1.28em;
-  overflow: hidden;
+  margin-top: 2.1em;
 }
-.index-post > * {
-  display: inline;
-  margin: 0;
-  /*
-  line-height: 1.2rem;
-  */
+.index-post table td.post-image {
+  min-width: 6.3em;
 }
-.index-post .id {
-  margin-right: 0.35em;
+.index-post table td.text {
+  vertical-align: top;
 }
-.index-post h2 {
-  font-size: 100%;
+.index-post table td.text .content {
+  margin-top: 0.56em;
+}
+.index-post .post-id {
   font-weight: bold;
-  margin-right: 0.35em;
 }
-.index-post .links {
-  margin: 0;
-}
-.index-post h2 {
+.index-post .post-title {
   font-family: 'Uncial Antiqua', cursive;
   font-weight: lighter;
-  font-size: 110%;
+  font-size: 140%;
+  display: block;
+  margin-bottom: 0.35em;
 }
+.index-post .post-title a {
+  text-decoration: none;
+}
+.index-post .post-tags {
+  margin-left: 0.42em;
+}
+  /*
 @media (max-width: 600px) {
-  .index-post {
-    height: inherit;
-    overflow: inherit;
-    margin-bottom: 1.4em;
-  }
-  .index-post > * {
-    display: block;
-  }
-  .index-post h2 {
-    margin: 0.35em 0 !important;
-  }
-  .index-post .tags {
-    margin: 0.49em 0;
-  }
-  .nav {
-    display: block;
-    width: 100%
-  }
-  .nav .next {
-    text-align: right;
-  }
 }
+  */
 
 .post h2 {
   margin-top: 1.4em;

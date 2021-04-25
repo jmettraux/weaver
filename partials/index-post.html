@@ -1,8 +1,27 @@
 
+<!--
 <div id="${id}" class="post index-post ${ctags}">
 <a class="id" href="${id}.html?t=${_title}">${_id}</a>
 <h2><a class="id" href="${id}.html?t=${_title}">${title}</a></h2>
 <div class="tags">${TAGS}</div>
 ${CONTENT}
+</div>
+-->
+<div id="${id}" class="post index-post ${ctags}">
+<table>
+<tr>
+<td class="post-image">
+<a class="id" href="${id}.html?t=${_title}"><img class="post-image" src="${IMAGE}" loading="lazy" /></a>
+</td>
+<td class="text">
+<div class="id-title">
+<span class="post-title"><a href="${id}.html?t=${_title}">${title}</a></span>
+<span class="post-id"><a href="${id}.html?t=${_title}">${_id}</a></span>
+<span class="post-tags">${TAGS}</span>
+</div>
+<div class="content">${CONTENT}</div>
+</td>
+</tr>
+</table>
 </div>
 
