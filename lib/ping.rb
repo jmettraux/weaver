@@ -48,6 +48,9 @@ links.each do |link, title, content|
 
   res = link.match?(/^https?:\/\//) ? Scorn.get(link) : nil
   #pp res._response._headers # <-- the webmention link might hide there!
+
+  puts "  response: /!\\ #{res._response._c} !!!" if res._response._c != 200
+
   next unless res && res._response._c == 200
 
   doc = Nokogiri::HTML(res)
