@@ -4,14 +4,14 @@ require 'scorn'
 require 'nokogiri'
 
 EXCLUSION_LIST = %w[
-  https://amzn.to/
-  https://en.wikipedia.org
-  https://www.drivethrurpg.com
-  https://www.youtube.com
-  https://www.patreon.com
-  https://www.kickstarter.com
-  .blogspot.com/
-    ]
+  #https://amzn.to/
+  #https://en.wikipedia.org
+  #https://www.drivethrurpg.com
+  #https://www.youtube.com
+  #https://www.patreon.com
+  #https://www.kickstarter.com
+  #.blogspot.com/
+    ].select { |e| e[0, 1] != '#' }
 
 
 dry = ! ARGV.include?('--not-dry')

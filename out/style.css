@@ -383,6 +383,16 @@ img.brand:hover {
   opacity: 0.7;
 }
 
+figure.circle img {
+  width: 210px;
+  height: 210px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid darkgrey;
+}
+
 audio {
   height: 1.4rem;
   width: 35%;
