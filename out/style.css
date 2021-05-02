@@ -80,6 +80,10 @@ img.post-image {
   border-radius: 50%;
   vertical-align: middle;
   border: 1px solid darkgrey;
+  filter: grayscale(100%);
+}
+.index-post:hover img.post-image {
+  filter: inherit;
 }
 
 .nav {
