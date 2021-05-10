@@ -8,13 +8,15 @@ meta_tag_partial = File.read('partials/post-meta-tag.html')
 
 paths = Dir['posts/*.md'].sort
 
-paths.each do |path|
+paths.each_with_index do |path, i|
 
   fn = 'out/' + File.basename(path, '.md') + '.html'
 
-  next if File.exist?(fn) && (File.mtime(fn) > File.mtime(path))
+  next if (
+    File.exist?(fn) &&
+    (File.mtime(fn) > File.mtime(path)) &&
+    (i < paths.length - 3))
 
-  i = paths.index(path)
   prv = paths[i - 1]
   nxt = paths[i + 1]
   f = lambda { |kla, path|
