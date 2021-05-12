@@ -15,7 +15,7 @@ paths.each_with_index do |path, i|
   next if (
     File.exist?(fn) &&
     (File.mtime(fn) > File.mtime(path)) &&
-    (i < paths.length - 3))
+    (i < paths.length - 2))
 
   prv = paths[i - 1]
   nxt = paths[i + 1]
