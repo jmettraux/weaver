@@ -227,10 +227,12 @@ body.post div.brand {
   }
 }
 body.post h2 {
-  vertical-align: bottom;
-  font-size: 210%;
+  font-size: 140%;
   padding-top: 0.7em;
+  /*
+  vertical-align: bottom;
   padding-left: 0.49em;
+  */
 }
 
 .foot-links {
@@ -357,6 +359,9 @@ figure.banner {
 }
 figure img {
   border: 1px solid lightgrey;
+}
+figure.noborder img {
+  border: 0;
 }
 figcaption {
   color: #aaaaaa;
