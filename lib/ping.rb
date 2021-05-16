@@ -11,6 +11,7 @@ EXCLUSION_LIST = %w[
   #https://www.patreon.com
   #https://www.kickstarter.com
   #.blogspot.com/
+  /Blogosphere
     ].select { |e| e[0, 1] != '#' }
 
 
