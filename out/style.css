@@ -84,6 +84,7 @@ img.post-image {
 }
 .index-post:hover img.post-image {
   filter: inherit;
+  border: 1px solid #dedede;
 }
 
 .nav {
