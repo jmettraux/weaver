@@ -6,6 +6,8 @@ require 'nokogiri'
 require 'redcarpet'
 require 'redcarpet/render_strip'
 
+require 'extensions'
+
 
 class String
 
@@ -130,7 +132,7 @@ module Blog
     m = content.match(/\A## ([^\n]+)/)
 
     vars['title'] ||= m ? m[1] : ''
-    vars['_title'] = vars['title'].gsub(/[^a-zA-Z0-9]/, '_')
+    vars['_title'] = vars['title'].to_safe_string
     vars['id'] = File.basename(path, '.md')
     vars['tags'] ||= []
 

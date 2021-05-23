@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    concurrent-ruby (1.1.8)
+    i18n (1.8.10)
+      concurrent-ruby (~> 1.0)
     mini_portile2 (2.5.0)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
@@ -13,9 +16,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  i18n
   nokogiri
   redcarpet
   scorn
 
 BUNDLED WITH
-   2.1.4
+   2.2.11

@@ -24,7 +24,7 @@ paths.each_with_index do |path, i|
     d = File.basename(path.split('/').last, '.md')
     d1 = [ d[0, 4], d[4, 2], d[6, 2] ].join('-')
     t = File.read(path).match(/^## (.+)\n/)[1]
-    t1 = t.gsub(/[^a-zA-Z0-9]/, '_')
+    t1 = t.to_safe_string
     l = "#{d}.html?f=a&t=#{t1}"
       #
     "<div class=\"#{kla}\">" +

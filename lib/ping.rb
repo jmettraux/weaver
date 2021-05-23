@@ -3,14 +3,16 @@ require 'redcarpet'
 require 'scorn'
 require 'nokogiri'
 
+require 'extensions'
+
 EXCLUSION_LIST = %w[
-  #https://amzn.to/
-  #https://en.wikipedia.org
-  #https://www.drivethrurpg.com
-  #https://www.youtube.com
-  #https://www.patreon.com
-  #https://www.kickstarter.com
-  #.blogspot.com/
+  https://amzn.to/
+  https://en.wikipedia.org
+  https://www.drivethrurpg.com
+  https://www.youtube.com
+  https://www.patreon.com
+  https://www.kickstarter.com
+  .blogspot.com/
   /Blogosphere
     ].select { |e| e[0, 1] != '#' }
 
@@ -20,7 +22,7 @@ post = ENV['POST'] || Dir['posts/*.md'].sort.last
 date = post.match(/(\d{8})/)[1]
 mdown = File.read(post)
 title = mdown.match(/^## ([^\n\r]+)/)[1]
-_title = title.gsub(/[^a-zA-Z0-9]/, '_')
+_title = title.to_safe_string
 uri = "https://weaver.skepti.ch/#{date}.html?f=wm&t=#{_title}"
 
 seen = []
