@@ -17,4 +17,5 @@ Disallow: /
 
 User-agent: *
 Disallow:
+
 Sitemap: https://weaver.skepti.ch/sitemap.xml
