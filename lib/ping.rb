@@ -6,13 +6,14 @@ require 'nokogiri'
 require 'extensions'
 
 EXCLUSION_LIST = %w[
-  https://amzn.to/
-  https://en.wikipedia.org
-  https://www.drivethrurpg.com
-  https://www.youtube.com
-  https://www.patreon.com
-  https://www.kickstarter.com
-  .blogspot.com/
+  #https://amzn.to/
+  #https://en.wikipedia.org
+  #https://www.drivethrurpg.com
+  #https://www.youtube.com
+  #https://www.patreon.com
+    # goes 403 it seems...
+  #https://www.kickstarter.com
+  #.blogspot.com/
   /Blogosphere
     ].select { |e| e[0, 1] != '#' }
 
@@ -61,28 +62,29 @@ links.each do |link, title, content|
   (
     doc.css('link[rel="webmention"]') +
     doc.css('link[rel="http://webmention.org/"]')
-  ).each do |wml|
+  )
+    .take(1)
+    .each { |wml|
 
-    href = wml[:href]
-    puts "  webmention: #{href}"
+      href = wml[:href]
+      puts "  webmention: #{href}"
 
-    puts "    post to: #{href}"
-    puts "    source: #{uri}"
-    puts "    target: #{link}"
+      puts "    post to: #{href}"
+      puts "    source: #{uri}"
+      puts "    target: #{link}"
 
-    if dry
-      # do nothing
-    else
-      r =
-        File.open('ping_debug.txt', 'wb') do |df|
-          Scorn.post(href, data: { source: uri, target: link }, debug: df)
-        end
-      File.open('ping_out.txt', 'wb') { |rf| rf.write(r) }
-      res = r._response
-      p [ res._c, res._sta ]
-      pp res._headers
-    end
-  end
+      if dry
+        # do nothing
+      else
+        r =
+          File.open('ping_debug.txt', 'wb') do |df|
+            Scorn.post(href, data: { source: uri, target: link }, debug: df)
+          end
+        File.open('ping_out.txt', 'wb') { |rf| rf.write(r) }
+        res = r._response
+        p [ res._c, res._sta ]
+        pp res._headers
+      end }
 
   seen << link
 end
