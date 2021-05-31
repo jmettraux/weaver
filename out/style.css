@@ -297,6 +297,15 @@ pre.listing {
   border-radius: 2%;
 }
 
+pre.pre1 { /* wog treasures and hoards */
+  margin: 0;
+  font-size: 100%;
+  padding: 1.4em;
+}
+pre.pre1 p { /* :-( */
+  margin: 0;
+}
+
 img.screenshot {
   -webkit-border-radius: 2%;
   -moz-border-radius: 2%;
