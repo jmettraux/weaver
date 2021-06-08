@@ -490,3 +490,12 @@ div.comments h4 {
   margin-bottom: 0.7em;
 }
 
+h3.webmentions {
+  margin-top: 4.2em;
+  font-size: 110%;
+  font-weight: normal;
+}
+h3.webmentions + ul {
+  margin-bottom: 3.5em;
+}
+
