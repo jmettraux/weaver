@@ -13,6 +13,7 @@ User-agent: BLEXBot/1.0
 User-agent: MTRobot
 User-agent: MauiBot
 User-agent: Linguee
+User-agent: DomainStatsBot
 Disallow: /
 
 User-agent: *
