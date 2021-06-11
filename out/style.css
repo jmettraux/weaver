@@ -265,6 +265,10 @@ blockquote p {
   display: block;
   padding-left: 35px;
 }
+blockquote .attribution {
+  font-style: italic;
+  margin-left: -0.7em;
+}
 
 code {
   font-family: monospace;
@@ -344,7 +348,7 @@ figure.left {
 }
 figure.right {
   float: right;
-  margin-left: 0.70em;
+  margin-left: 0.98em;
   max-width: 35%;
 }
 figure.small { max-width: 28%; }
