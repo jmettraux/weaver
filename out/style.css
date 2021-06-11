@@ -524,9 +524,9 @@ div.comment {
 h3.webmentions {
   margin-top: 4.2em;
   font-size: 110%;
-  font-weight: normal;
 }
 h3.webmentions + ul {
+  margin-top: 1.4em;
   margin-bottom: 3.5em;
 }
 
