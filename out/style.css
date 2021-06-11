@@ -505,6 +505,7 @@ h3.comments {
   /*margin-left: 0.7em;*/
 }
 h3.comments ~ p {
+  font-size: 94%;
   font-family: inconsolata,monospace;
   /*margin-left: 0.7em;*/
 }
