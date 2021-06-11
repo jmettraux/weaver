@@ -485,6 +485,10 @@ pre.right {
 
 .pix { float: right; }
 
+
+/** comments **/
+
+/* first system
 div.comments {
   margin: 3.5em 0;
 }
@@ -493,6 +497,28 @@ div.comments h3 {
 div.comments h4 {
   margin-bottom: 0.7em;
 }
+*/
+
+/* second system */
+h3.comments {
+  margin-top: 4.2em;
+  /*margin-left: 0.7em;*/
+}
+h3.comments ~ p {
+  font-family: inconsolata,monospace;
+  /*margin-left: 0.7em;*/
+}
+h3.comments ~ p:last-of-type {
+  margin-bottom: 3.5em;
+}
+div.comment {
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
+  /*margin-left: 0.7em;*/
+}
+
+
+/** webmentions **/
 
 h3.webmentions {
   margin-top: 4.2em;
