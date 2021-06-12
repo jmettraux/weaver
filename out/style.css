@@ -513,9 +513,11 @@ h3.comments ~ p:last-of-type {
   margin-bottom: 3.5em;
 }
 div.comment {
-  margin-top: 1.4em;
+  margin-top: 2.1em;
   margin-bottom: 1.4em;
-  /*margin-left: 0.7em;*/
+}
+h3.comments + div.comment {
+  margin-top: 1.4em;
 }
 a.reply {
   margin-left: 1.4em;
