@@ -528,6 +528,9 @@ h3.webmentions {
   margin-top: 4.2em;
   font-size: 110%;
 }
+h3.webmentions a {
+  text-decoration: none;
+}
 h3.webmentions + ul {
   margin-top: 1.4em;
   margin-bottom: 3.5em;
