@@ -517,6 +517,9 @@ div.comment {
   margin-bottom: 1.4em;
   /*margin-left: 0.7em;*/
 }
+a.reply {
+  margin-left: 1.4em;
+}
 
 
 /** webmentions **/
