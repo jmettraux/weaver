@@ -1,4 +1,12 @@
 
+HOST = shooto
+CURRENT != ls -1 -t posts/ | head -1
+CURR != basename $(CURRENT) '.md'
+
+
+current:
+	@echo $(CURRENT)
+
 render: index posts copyright atom sitemap
 c: render
 
@@ -22,13 +30,19 @@ new:
 	bundle exec ruby -Ilib lib/new_post.rb
 n: new
 write:
-	$(EDITOR) posts/`ls -1 -t posts/ | head -1`
+	$(EDITOR) posts/$(CURRENT)
 w: write
+
+backup:
+	scp posts/$(CURRENT) $(HOST):tmp/
+	scp out/images/$(CURR)_* $(HOST):tmp/
+bak: backup
+b: backup
 
 publish:
 	rsync -azv --delete --delete-excluded \
       --exclude *.swp \
-      out/ shooto:/var/www/htdocs/weaver.skepti.ch/
+      out/ $(HOST):/var/www/htdocs/weaver.skepti.ch/
 p: publish
 
 Serve: render
@@ -38,11 +52,8 @@ serve:
 S: Serve
 s: serve
 
-redate:
-	bundle exec ruby -Ilib lib/redate_post.rb posts/`ls -1 -t posts/ | head -1`
-
-#backup:
-#	cd .. && tar cjvf ~/Dropbox/backup/blog_`date +%Y%m%d_%H%M%S`.tbz blog/
+#redate:
+#	bundle exec ruby -Ilib lib/redate_post.rb posts/$(CURRENT)
 
 touch:
 	touch posts/*.md
@@ -53,10 +64,10 @@ PING:
 	bundle exec ruby -Ilib lib/ping.rb --not-dry
 
 log:
-	ssh -t shooto cat /var/www/logs/weaver_access.log | ruby lib/log.rb
+	ssh -t $(HOST) cat /var/www/logs/weaver_access.log | ruby lib/log.rb
 tail:
-	ssh -t shooto tail -f /var/www/logs/weaver_access.log | ruby lib/tail.rb
+	ssh -t $(HOST) tail -f /var/www/logs/weaver_access.log | ruby lib/tail.rb
 
 
-.PHONY: posts
+.PHONY: current posts backup log tail ping PING touch
 
