@@ -34,8 +34,7 @@ write:
 w: write
 
 backup:
-	scp posts/$(CURRENT) $(HOST):tmp/
-	scp out/images/$(CURR)_* $(HOST):tmp/
+	@scp .todo.md posts/$(CURRENT) out/images/$(CURR)_* $(HOST):tmp/
 bak: backup
 b: backup
 
