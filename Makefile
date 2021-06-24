@@ -26,11 +26,16 @@ sitemap:
 W:
 	vim -c ":Vt posts/"
 
+draft:
+	vim draft.md
+d: draft
+
+
 new:
 	bundle exec ruby -Ilib lib/new_post.rb
 n: new
 write:
-	$(EDITOR) posts/$(CURRENT)
+	vim posts/$(CURRENT)
 w: write
 
 backup:
