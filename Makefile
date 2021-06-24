@@ -4,9 +4,6 @@ CURRENT != ls -1 -t posts/ | head -1
 CURR != basename $(CURRENT) '.md'
 
 
-current:
-	@echo $(CURRENT)
-
 render: index posts copyright atom sitemap
 c: render
 
@@ -39,7 +36,7 @@ write:
 w: write
 
 backup:
-	@scp .todo.md draft.md posts/$(CURRENT) out/images/$(CURR)_* $(HOST):tmp/
+	@scp .todo.md draft*.md posts/$(CURRENT) out/images/$(CURR)_* $(HOST):tmp/
 bak: backup
 b: backup
 
@@ -48,6 +45,10 @@ publish:
       --exclude *.swp \
       out/ $(HOST):/var/www/htdocs/weaver.skepti.ch/
 p: publish
+
+cleandrafts:
+	ssh $(HOST) '/bin/sh -c "rm -fv /var/www/htdocs/weaver.skepti.ch/draft*.{html,jpg,png,gif}"'
+cleand: cleandrafts
 
 Serve: render
 	ruby -run -ehttpd out/ -p7000

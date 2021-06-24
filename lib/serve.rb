@@ -10,7 +10,10 @@ renderer =
     loop do
       begin
 
-        mtime = Dir['posts/*.md'].collect { |pa| File.mtime(pa).to_f }.max
+        mtime =
+          (Dir['posts/*.md'] + Dir['draft*.md'])
+            .collect { |pa| File.mtime(pa).to_f }
+            .max
 
         if mtime != last_mtime
           puts 'rendering...'
