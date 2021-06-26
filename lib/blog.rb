@@ -98,24 +98,14 @@ module Blog
 
     doc = Nokogiri::HTML(s)
 
-    doc.css('script').each do |script|
+    %w[ script style ].each do |tag|
 
-      #if target = script['data-lambda-io-target']
-      #  script.add_next_sibling(
-      #    "<a href=\"#{target}\">(presentation slides at #{target})</a>")
-      #end
-
-      script.remove
+      doc.css(tag).each(&:remove)
     end
 
     doc.css('audio').each do |audio|
 
       audio.remove_attribute('controls')
-    end
-
-    doc.css('style').each do |style|
-
-      style.remove
     end
 
     doc.at_css('body').to_xhtml[6..-8]
