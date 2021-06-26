@@ -337,7 +337,7 @@ li {
   margin-left: 1.4em;
   margin-bottom: 0.14em;
 }
-ol li {
+ol > li {
   list-style-type: decimal;
 }
 
@@ -554,7 +554,7 @@ a.footnote {
 ol.footnotes {
   margin-top: 3.5em;
 }
-ol.footnotes li {
+ol.footnotes > li {
   list-style-type: none;
   margin-left: 2.1em;
 }
