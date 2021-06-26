@@ -11,7 +11,8 @@ paths = Dir['posts/*.md'].sort
 do_render_post =
   lambda do |path, i|
 
-    fn = 'out/' + File.basename(path, '.md') + '.html'
+    dt = File.basename(path, '.md')
+    fn = "out/#{dt}.html"
 
     next if (
       File.exist?(fn) &&
@@ -54,7 +55,7 @@ do_render_post =
 
       sc = content.substitute(vars)
 
-      vars['CONTENT'] = Blog.md_render(sc)
+      vars['CONTENT'] = Blog.md_render(sc, footnote_prefix: dt)
 
       vars['TAGS'] = vars['tags']
         .collect { |tag| tag_partial.substitute({ tag: tag }) }

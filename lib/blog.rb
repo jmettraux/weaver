@@ -7,6 +7,7 @@ require 'redcarpet'
 require 'redcarpet/render_strip'
 
 require 'extensions'
+require 'html_renderer'
 
 
 class String
@@ -73,8 +74,8 @@ module Blog
 
   @html_renderer =
     Redcarpet::Markdown.new(
-      Redcarpet::Render::HTML.new({}),
-      {})
+      HtmlRenderer.new({}),
+      tables: false, footnotes: true)
   @text_renderer =
     Redcarpet::Markdown.new(
       Redcarpet::Render::StripDown.new(),
@@ -83,6 +84,10 @@ module Blog
   def self.md_render(s, opts={})
 
     renderer = opts[:mode] == 'text' ? @text_renderer : @html_renderer
+
+    hr = renderer.renderer
+    hr.footnote_prefix = opts[:footnote_prefix] \
+      if hr.respond_to?(:footnote_prefix=)
 
     r = renderer.render(s)
 

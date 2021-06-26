@@ -541,3 +541,26 @@ h3.webmentions + ul {
   margin-bottom: 3.5em;
 }
 
+
+/** footnotes **/
+
+a.footnote {
+  font-size: 84%;
+  position: relative;
+  top: -0.28em;
+  text-decoration: none;
+}
+
+ol.footnotes {
+  margin-top: 3.5em;
+}
+ol.footnotes li {
+  list-style-type: none;
+  margin-left: 2.1em;
+}
+ol.footnotes span.number {
+  position: relative;
+  top: 0.7em;
+  left: -2.1em;
+}
+
