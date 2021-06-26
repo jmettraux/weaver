@@ -545,6 +545,7 @@ h3.webmentions + ul {
 /** footnotes **/
 
 a.footnote {
+  margin-left: 0.28em;
   font-size: 84%;
   position: relative;
   top: -0.28em;
@@ -558,9 +559,10 @@ ol.footnotes > li {
   list-style-type: none;
   margin-left: 2.1em;
 }
-ol.footnotes span.number {
+ol.footnotes a.number {
   position: relative;
   top: 0.7em;
   left: -2.1em;
+  text-decoration: none;
 }
 

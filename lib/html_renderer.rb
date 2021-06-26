@@ -20,8 +20,10 @@ class HtmlRenderer < Redcarpet::Render::HTML
 
   def footnote_ref(number)
 
-    "<a class=\"footnote\" href=\"##{fnote_prefix}-#{number}\"" +
-    ">[#{number}]</a>"
+    "<a class=\"footnote\" " +
+    "id=\"a-#{fnote_prefix}-#{number}\" " +
+    "href=\"##{fnote_prefix}-#{number}\" " +
+    ">#{number}</a>"
   end
 
   def footnote_def(content, number)
@@ -52,7 +54,8 @@ class HtmlRenderer < Redcarpet::Render::HTML
 
     @footnotes.each do |id, number, content|
       s << "<li id=\"#{fnote_prefix}-#{number}\">"
-      s << "<span class=\"number\">[#{number}]</span>"
+      s << "<a class=\"number\" href=\"#a-#{fnote_prefix}-#{number}\">"
+      s << number.to_s << '</a>'
       s << content
       s << "\n</li><!-- end of footnote ##{fnote_prefix}-#{number} -->"
     end
