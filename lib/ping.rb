@@ -13,8 +13,9 @@ EXCLUSION_LIST = %w[
   #https://www.patreon.com
     # goes 403 it seems...
   #https://www.kickstarter.com
-  #.blogspot.com/
+  .blogspot.com/
   /Blogosphere
+  /series/amplifying-the-blogosphere/
     ].select { |e| e[0, 1] != '#' }
 
 
