@@ -2,7 +2,7 @@
 HOST = shooto
 CURRENT != ls -1 -t posts/ | head -1
 CURR != basename $(CURRENT) '.md'
-BXR = bundle exec ruby
+BXR = bundle exec ruby -Ilib
 
 
 render: index posts copyright atom sitemap
@@ -11,15 +11,15 @@ c: render
 #rp: render publish
 
 index:
-	$(BXR) -Ilib lib/render_index.rb
+	$(BXR) lib/render_index.rb
 posts:
-	$(BXR) -Ilib lib/render_posts.rb
+	$(BXR) lib/render_posts.rb
 copyright:
-	$(BXR) -Ilib lib/render_copyright.rb
+	$(BXR) lib/render_copyright.rb
 atom:
-	$(BXR) -Ilib lib/render_atom.rb
+	$(BXR) lib/render_atom.rb
 sitemap:
-	$(BXR) -Ilib lib/render_sitemap.rb
+	$(BXR) lib/render_sitemap.rb
 
 W:
 	vim -c ":Vt posts/"
@@ -30,7 +30,7 @@ d: draft
 
 
 new:
-	$(BXR) -Ilib lib/new_post.rb
+	$(BXR) lib/new_post.rb
 n: new
 write:
 	vim posts/$(CURRENT)
@@ -54,7 +54,7 @@ cleand: cleandrafts
 Serve: render
 	ruby -run -ehttpd out/ -p7000
 serve:
-	$(BXR) -Ilib lib/serve.rb
+	$(BXR) lib/serve.rb
 S: Serve
 s: serve
 
@@ -62,9 +62,9 @@ touch:
 	touch posts/*.md
 
 ping:
-	$(BXR) -Ilib lib/ping.rb --dry
+	$(BXR) lib/ping.rb --dry
 PING:
-	$(BXR) -Ilib lib/ping.rb --not-dry
+	$(BXR) lib/ping.rb --not-dry
 
 log:
 	ssh -t $(HOST) cat /var/www/logs/weaver_access.log | ruby lib/log.rb
