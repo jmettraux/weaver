@@ -4,7 +4,8 @@ TYPES = %w[
   .jpg
   .png
   .webp
-  .gif ]
+  .gif
+  .svg ]
 
 dry =
   ARGV.include?('-d') || ARGV.include?('--dry')

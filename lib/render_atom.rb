@@ -22,6 +22,7 @@ posts =
       .split("\n")
       .reject { |l| l == '' }
       .reject { |l| l.match(/^(#|\s*<|-->)/) }
+      .reject { |l| l == '&nbsp;' }
       .take(2)
       .join("\n")
     vars['summary'] = Blog
