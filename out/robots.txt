@@ -14,6 +14,7 @@ User-agent: MTRobot
 User-agent: MauiBot
 User-agent: Linguee
 User-agent: DomainStatsBot
+User-agent: PetalBot
 Disallow: /
 
 User-agent: *
