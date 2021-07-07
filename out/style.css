@@ -527,6 +527,18 @@ a.reply {
 }
 
 
+.links .twitter img {
+  width: 1.1em;
+  margin: 0 1.4em;
+  top: 0.3em;
+  position: relative;
+}
+#index .links .twitter img {
+  width: 1.0em;
+  margin: 0 0.7em;
+}
+
+
 /** webmentions **/
 
 h3.webmentions {
