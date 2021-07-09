@@ -8,3 +8,5 @@ source ~/.vim/fraccents.vim
 
 command! Bak :normal :!make b
 
+command! Img :normal :r partials/img.vim
+
