@@ -7,12 +7,13 @@ require 'extensions'
 
 EXCLUSION_LIST = %w[
   #https://amzn.to/
-  #https://en.wikipedia.org
   #https://www.drivethrurpg.com
   #https://www.youtube.com
-  #https://www.patreon.com
+  https://www.patreon.com
     # goes 403 it seems...
   #https://www.kickstarter.com
+  .wikipedia.org
+  grumpywizard.home.blog
   .blogspot.com/
   /Blogosphere
   /series/amplifying-the-blogosphere/
