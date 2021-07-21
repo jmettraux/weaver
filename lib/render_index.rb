@@ -49,6 +49,8 @@ vars['ALL_TAGS'] = vars['all_tags']
   .join(' ')
 vars['description'] =
   vars['blog']['title']
+vars['uri'] =
+  vars['blog']['uri']
 vars['og'] =
   { title: vars['blog']['title'],
     type: 'website',
