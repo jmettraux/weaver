@@ -5,7 +5,7 @@ require 'nokogiri'
 
 require 'extensions'
 
-EXCLUSION_LIST = %w[
+EXCLUSION_LIST = %{
   #https://amzn.to/
   #https://www.drivethrurpg.com
   #https://www.youtube.com
@@ -17,8 +17,11 @@ EXCLUSION_LIST = %w[
   .blogspot.com/
   /Blogosphere
   /series/amplifying-the-blogosphere/
-    ].select { |e| e[0, 1] != '#' }
-
+      }
+    .strip
+    .split("\n")
+    .collect(&:strip)
+    .select { |e| e[0, 1] != '#' }
 
 dry = ! ARGV.include?('--not-dry')
 post = ENV['POST'] || Dir['posts/*.md'].sort.last
