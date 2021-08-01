@@ -1,6 +1,7 @@
 User-agent: AhrefsBot
 User-agent: adsbot
 User-agent: Adsbot
+User-agent: dotbot
 User-agent: x28-job-bot
 User-agent: MJ12bot
 User-agent: NaverBot
