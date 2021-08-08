@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+TYPES = %w[
+  .jpg
+  .png
+  .webp
+  .gif
+  .svg ]
+
+dry =
+  ARGV.include?('-d') || ARGV.include?('--dry')
+name =
+  ARGV.find { |a| ! a.match(/^-/) }
+
+path = Dir[File.join(ENV['HOME'], 'Downloads', '*')]
+  .select { |f| TYPES.include?(File.extname(f)) }
+  .sort { |f| File.mtime(f).to_i }
+  .first
+
+siz = `ls -lh #{path}`.split[4]
+ext = File.extname(path)
+tgt = name ? "#{name}#{ext}" : File.basename(path)
+
+puts
+puts "  mv #{path} #{tgt}"
+puts "    #{siz}"
+puts
+
+system("mv #{path} #{tgt}") unless dry
+
