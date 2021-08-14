@@ -9,17 +9,33 @@ TYPES = %w[
 
 dry =
   ARGV.include?('-d') || ARGV.include?('--dry')
-name =
-  ARGV.find { |a| ! a.match(/^-/) }
+names =
+  ARGV.select { |a| ! a.match(/^-/) }
+tname = names.pop
+sname = names.shift
 
-path = Dir[File.join(ENV['HOME'], 'Downloads', '*')]
+paths = Dir[File.join(ENV['HOME'], 'Downloads', '*')]
   .select { |f| TYPES.include?(File.extname(f)) }
   .sort { |f| File.mtime(f).to_i }
-  .first
+
+if ARGV.include?('-l') || ARGV.include?('--list')
+  l = 14
+  puts paths[0, l]
+  puts '...' if paths.length > l
+  exit 0
+end
+
+path = paths.first
+path = paths.find { |f| f.index(sname) } if sname
+
+unless path
+  $stderr.puts("NADA")
+  exit 1
+end
 
 siz = `ls -lh #{path}`.split[4]
 ext = File.extname(path)
-tgt = name ? "#{name}#{ext}" : File.basename(path)
+tgt = tname ? "#{tname}#{ext}" : File.basename(path)
 
 puts
 puts "  mv #{path} #{tgt}"
