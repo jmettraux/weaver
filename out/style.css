@@ -579,3 +579,14 @@ ol.footnotes a.number {
   text-decoration: none;
 }
 
+span.lang {
+  font-size: 77%;
+  background-color: lightgrey;
+  color: white;
+  font-weight: bold;
+  padding: 0 0.35em;
+  -webkit-border-radius: 14%;
+  -moz-border-radius: 14%;
+  border-radius: 14%;
+}
+
