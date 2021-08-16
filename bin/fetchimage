@@ -2,6 +2,7 @@
 
 TYPES = %w[
   .jpg
+  .jpeg
   .png
   .webp
   .gif
@@ -35,7 +36,9 @@ end
 
 siz = `ls -lh #{path}`.split[4]
 ext = File.extname(path)
-tgt = tname ? "#{tname}#{ext}" : File.basename(path)
+tgt = (tname ? "#{tname}#{ext}" : File.basename(path)).downcase
+
+tgt.gsub!(/\.jpeg$/, '.jpg')
 
 puts
 puts "  mv #{path} #{tgt}"
