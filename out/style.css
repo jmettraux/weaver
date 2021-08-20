@@ -354,6 +354,9 @@ figure.right {
   margin-left: 0.98em;
   max-width: 35%;
 }
+figure.left.spaced { margin-right: 1.47em; }
+figure.right.spaced { margin-left: 1.47em; }
+
 figure.small { max-width: 28%; }
 figure.smaller { max-width: 21%; }
 figure.smallerr { max-width: 19%; }
