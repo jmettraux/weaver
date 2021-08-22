@@ -30,16 +30,22 @@ if as
 
   fname = fnames.first
   t = "out/images/#{current}_#{ARGV.last}#{File.extname(fname)}"
+  siz = `ls -lh #{fname}`.split[4]
 
-  puts " . #{fname} -->\n     #{t}"
-  system("mv #{fname} #{t}") unless dry
+  puts " . #{fname} (#{siz}) -->\n     #{t}"
+  unless dry
+    system("mv #{fname} #{t}")
+  end
 
 else
 
   fnames.each do |fname|
     t = "out/images/#{current}_#{fname}"
-    puts " . #{fname} -->\n     #{t}"
-    system("mv #{fname} #{t}") unless dry
+    siz = `ls -lh #{fname}`.split[4]
+    puts " . #{fname} (#{siz}) -->\n     #{t}"
+    unless dry
+      system("mv #{fname} #{t}")
+    end
   end
 end
 
