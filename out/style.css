@@ -593,3 +593,11 @@ span.lang {
   border-radius: 14%;
 }
 
+.h2-uncial {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 130%;
+  /*
+  line-height: 2.1;
+  */
+}
+
