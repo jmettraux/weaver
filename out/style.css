@@ -346,7 +346,7 @@ figure.left, figure.right {
 }
 figure.left {
   float: left;
-  margin-right: 0.63em;
+  margin-right: 0.98em;
   max-width: 35%;
 }
 figure.right {
