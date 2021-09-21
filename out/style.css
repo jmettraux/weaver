@@ -351,7 +351,7 @@ figure.left {
 }
 figure.right {
   float: right;
-  margin-left: 0.98em;
+  margin-left: 1.4em;
   max-width: 35%;
 }
 figure.left.spaced { margin-right: 1.47em; }
