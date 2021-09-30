@@ -509,6 +509,7 @@ div.comments h4 {
 /* second system */
 h3.comments {
   margin-top: 4.2em;
+  font-variant: small-caps;
   /*margin-left: 0.7em;*/
 }
 h3.comments ~ p,
