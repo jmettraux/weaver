@@ -525,6 +525,11 @@ div.comment {
   margin-top: 2.1em;
   margin-bottom: 1.4em;
 }
+div.comment:before {
+  content: '·';
+  padding-left: 0.1em;
+  padding-right: 0.3em;
+}
 h3.comments + div.comment {
   margin-top: 1.4em;
 }
