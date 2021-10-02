@@ -15,6 +15,7 @@ out/sitemap.xml
 
 tmp/*.log
 tmp/cities.yaml
+tmp/systemzero
 
 var/*
 
