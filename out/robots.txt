@@ -16,6 +16,7 @@ User-agent: MauiBot
 User-agent: Linguee
 User-agent: DomainStatsBot
 User-agent: PetalBot
+User-agent: DataForSeoBot
 Disallow: /
 
 User-agent: *
