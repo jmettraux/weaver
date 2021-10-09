@@ -37,7 +37,8 @@ write:
 w: write
 
 backup:
-	@time scp .todo.md draft*.md out/images/draft_* posts/$(CURRENT) out/images/$(CURR)_* $(HOST):tmp/
+	#@time scp .todo.md draft*.md out/images/draft_* posts/$(CURRENT) out/images/$(CURR)_* $(HOST):tmp/
+	@time scp .todo.md posts/$(CURRENT) out/images/$(CURR)_* $(HOST):tmp/
 bak: backup
 b: backup
 
