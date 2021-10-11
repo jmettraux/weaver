@@ -73,6 +73,7 @@ img.brand {
   vertical-align: middle;
 }
 img.post-image {
+  /* WARNING: change width/height here and in partials/index-post.html */
   width: 4.9em;
   height: 4.9em;
   -webkit-border-radius: 50%;
