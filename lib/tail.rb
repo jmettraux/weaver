@@ -6,7 +6,7 @@ require 'open-uri'
 
 HOSTS =
   Hash.new do |h, k|
-    s = `dig -x #{k}`
+    s = `dig -x #{k} @8.8.8.8`
     m = s.match(/PTR[ \t]+([^ ]+)\./)
     h[k] = m[1] rescue '???'
   end
