@@ -17,5 +17,14 @@ function! s:InsertImageTag()
   exe "silent r! echo '</figcaption>'"
   exe "silent r! echo '</figure>'"
 endfunction " InsertImageTag
-command! -nargs=0 Img :call <SID>InsertImageTag()
+command! Img :call <SID>InsertImageTag()
+
+
+function! s:InsertTwitterImageLine()
+  let l:current = fnamemodify(trim(system('ls -1 -t posts/ | head -1')), ':r')
+  exe "silent r! echo 'twitter_image: \"images/" . l:current . "_q_xxx.jpg\"'"
+endfunction " InsertTwitterImageLine
+command! Timg :call <SID>InsertTwitterImageLine()
+
+command! Emdash :normal i—<ESC>
 
