@@ -540,14 +540,20 @@ a.reply {
 
 
 .links .twitter img {
+  position: relative;
   width: 1.1em;
-  margin: 0 1.4em;
+  margin: 0;
+  margin-left: 0.7em;
+  top: 0.3em;
+}
+
+.links .atom img {
+  width: 0.94em;
+  margin-left: 0.35em;
+  margin-right: 0.35em;
+  margin: 0 0.35em;
   top: 0.3em;
   position: relative;
-}
-#index .links .twitter img {
-  width: 1.0em;
-  margin: 0 0.7em;
 }
 
 
