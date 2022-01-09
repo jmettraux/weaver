@@ -28,3 +28,5 @@ command! Timg :call <SID>InsertTwitterImageLine()
 
 command! Emdash :normal i—<ESC>
 
+command! Fav :normal i <img id="favourite" style="height: 10pt; margin-left: 1rem; margin-top: 0.3rem;" title="a favourite" src="images/crown.svg"></img> <ESC>
+
