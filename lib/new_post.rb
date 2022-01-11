@@ -19,7 +19,7 @@ tags: [ 'en' ]
 ## title
 
 Blah blah blah
-  }.strip)
+  }.strip + "\n")
 end
 
 puts ". prepared #{fn}"
