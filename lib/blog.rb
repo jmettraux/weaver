@@ -103,15 +103,13 @@ module Blog
 
     doc = Nokogiri::HTML(s)
 
-    %w[ script style ].each do |tag|
+    doc.css('.no-atom').each(&:remove)
 
-      doc.css(tag).each(&:remove)
-    end
+    %w[ script style ]
+      .each { |tag| doc.css(tag).each(&:remove) }
 
-    doc.css('audio').each do |audio|
-
-      audio.remove_attribute('controls')
-    end
+    doc.css('audio').each { |e| e.remove_attribute('controls') }
+    doc.css('img').each { |e| e.remove_attribute('style') }
 
     doc.at_css('body').to_xhtml[6..-8]
   end
