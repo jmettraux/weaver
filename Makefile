@@ -43,6 +43,9 @@ bak: backup
 b: backup
 
 publish:
+	chmod a+x out/docs/*.pdf
+	chmod a+x out/images/*.jpg
+	chmod a+x out/images/*.png
 	rsync -azv --delete --delete-excluded \
       --exclude *.swp \
       out/ $(HOST):/var/www/htdocs/weaver.skepti.ch/
