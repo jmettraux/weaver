@@ -22,6 +22,8 @@ a:link { color: grey; }
   }
 }
 
+a.index { float: right; }
+
 h1 {
   font-size: 210%;
   font-weight: bold;

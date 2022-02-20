@@ -11,6 +11,12 @@ var onTagChange = function(h) {
       .map(function(a) { return '#' + a.href.split('#').slice(-1)[0]; });
     if (tags.includes(h)) H.remc(e, '.hidden'); else H.addc(e, '.hidden');
   });
+
+  H.hide('a.index');
+  if (h !== '') {
+    H.unhide('a.index');
+    H.elt('a.index').href = '/?f=_' + window.location.hash.substring(1);
+  }
 }
 
 var onAnchorChange = function(h) {
