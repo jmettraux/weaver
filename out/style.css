@@ -357,6 +357,7 @@ figure.right {
 }
 figure.left.spaced { margin-right: 1.47em; }
 figure.right.spaced { margin-left: 1.47em; }
+figure.capright figcaption { text-align: right; }
 
 figure.small { max-width: 28%; }
 figure.smaller { max-width: 21%; }
