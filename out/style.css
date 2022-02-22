@@ -393,6 +393,9 @@ figure.banner figcaption {
 figure.banner img {
   width: 100%;
 }
+figure.banner.bottom {
+  margin-bottom: 3.5rem;
+}
 
 @media (max-width: 600px) {
   figure.left, figure.right {
