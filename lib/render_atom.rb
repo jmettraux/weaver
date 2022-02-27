@@ -19,6 +19,7 @@ posts =
     content = content.split("\n", 2).last # remove title
 
     ct = content
+      .gsub(/<figcaption>.+?<\/figcaption>/m, '')
       .split("\n")
       .reject { |l| l == '' }
       .reject { |l| l.match(/^(#|\s*<|-->)/) }
@@ -32,7 +33,8 @@ posts =
       .gsub(/"/, '\"')
       .strip
 #puts; puts 'v' * 80
-#pp ct
+#puts vars['summary']
+##exit 0 if ct.match(/Xia/)
 #puts '^' * 80; puts
 
     vars['CONTENT'] =

@@ -15,7 +15,7 @@ posts =
     vars, content = Blog.load_post(path)
 
     content = content
-      .gsub(/\n<figcaption>[^<]+<\/figcaption>/, '')
+      .gsub(/\n<figcaption>.+?<\/figcaption>/m, '')
       .split("\n", 2).last # remove title
       .split("\n")
       .reject { |l| l.match(/^ *(#|<|-->)/) }
