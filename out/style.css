@@ -397,6 +397,9 @@ figure.banner img {
 figure.banner.bottom {
   margin-bottom: 3.5rem;
 }
+figure.banner:not(:first-of-type) {
+  margin-top: 2.1rem;
+}
 
 @media (max-width: 600px) {
   figure.left, figure.right {
