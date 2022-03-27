@@ -400,6 +400,10 @@ figure.banner.bottom {
 figure.banner:not(:first-of-type) {
   margin-top: 2.1rem;
 }
+figure.banner.spaced {
+  margin-top: 2.8rem;
+  margin-bottom: 2.1rem;
+}
 
 @media (max-width: 600px) {
   figure.left, figure.right {
