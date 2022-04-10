@@ -17,6 +17,8 @@ EXCLUSION_LIST = %{
   .blogspot.com/
   /Blogosphere
   /series/amplifying-the-blogosphere/
+  .tumblr.com/
+  .wordpress.com/
       }
     .strip
     .split("\n")
