@@ -3,6 +3,8 @@ require 'time'
 require 'json'
 require 'open-uri'
 
+KEY =
+  File.read('.abstract_key').strip rescue nil
 
 HOSTS =
   Hash.new do |h, k|
@@ -14,8 +16,10 @@ CITIES =
   Hash.new do |h, k|
     s =
       begin
-        URI.open("https://freegeoip.app/json/#{k}").read
-      rescue
+        fail unless KEY
+        URI.open("https://ipgeolocation.abstractapi.com/v1/?api_key=#{KEY}&ip_address=#{k}").read
+      rescue => err
+p err
         { 'country_code' => 'X', 'city' => 'X' }.to_json
       end
     h[k] =
@@ -45,7 +49,10 @@ STDIN.each_line do |l|
   end # so that I can hit Enter to space output...
 
   a = HOSTS[m[1]]
-  c = CITIES[m[1]]; co = c['country_code']; re = c['region_code']; ci = c['city']
+  c = CITIES[m[1]]
+  v = (c['security'] || {})['is_vpn'] ? 'vpn' : nil
+  t = ((c['timezone'] || {})['current_time'] || '').gsub(/:/, '')[0, 4]
+  c = [ c['country_code'], c['region_iso_code'], c['city'], v, t ].compact
 
   l = l.gsub(/\[[^\]]+\]/) { |x|
     t = x[1..-2].sub(':', ' ')
@@ -55,6 +62,6 @@ STDIN.each_line do |l|
     .gsub(/" (\d{3}) (\d)/) { |x| "\" #{CG}#{x[2, 3]}#{CR} #{x[-2..-1]}" }
     .gsub(/"(GET|HEAD) [^\s]+ HTTP\/[^"]+"/) { |x| "#{CY}#{x}#{CR}" }
 
-  print "#{CB}#{a} #{ci}|#{re}|#{co}#{CR} #{l.split(/\s+/)[1..-1].join(' ')}\n\r"
+  print "#{CB}#{a} #{c.join('|')}#{CR} #{l.split(/\s+/)[1..-1].join(' ')}\n\r"
 end
 
