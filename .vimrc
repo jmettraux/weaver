@@ -30,3 +30,5 @@ command! Emdash :normal a—<ESC>
 
 command! Fav :normal i <img id="favourite" style="height: 10pt; margin-left: 1rem; margin-top: 0.3rem;" title="a favourite" src="images/crown.svg"></img> <ESC>
 
+command! Attri :normal 0o><CR>> <span class="attribution"><a href=""></a></span><ESC>
+
