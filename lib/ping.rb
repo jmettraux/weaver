@@ -52,6 +52,9 @@ links = lrender.links
 
 links.each do |link, title, content|
 
+  m = link.match(/^(.+)([?&#]eow)$/)
+  link = m[1] if m
+
   next if seen.include?(link)
 
   puts "---"
