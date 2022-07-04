@@ -75,6 +75,10 @@ log:
 tail:
 	ssh -t $(HOST) tail -f /var/www/logs/weaver_access.log | ruby lib/tail.rb
 
+add:
+	git add out/images/ posts/
+a: add
 
-.PHONY: current posts backup log tail ping PING touch
+
+.PHONY: current posts backup log tail ping PING touch add
 
