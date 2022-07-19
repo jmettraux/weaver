@@ -17,6 +17,7 @@ User-agent: Linguee
 User-agent: DomainStatsBot
 User-agent: PetalBot
 User-agent: DataForSeoBot
+User-agent: SEO Scanner
 Disallow: /
 
 User-agent: *
