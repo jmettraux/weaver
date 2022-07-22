@@ -557,7 +557,16 @@ a.reply {
 }
 
 
+/*
 .links .twitter img {
+  position: relative;
+  width: 1.1em;
+  margin: 0;
+  margin-left: 0.7em;
+  top: 0.3em;
+}
+*/
+.links .mastodon img {
   position: relative;
   width: 1.1em;
   margin: 0;
