@@ -35,7 +35,19 @@ ${CONTENT}
   <span class="tags">${TAGS}</span>
 </div>
 </div>
-<script type="text/javascript">H.onDocumentReady(toggleBlogImage);</script>
+<script type="text/javascript">
+  H.onDocumentReady(function() {
+    toggleBlogImage();
+    document
+      .querySelector('.subtitle')
+      .addEventListener('click', function(ev) {
+        if ( ! ev.shiftKey) return;
+        var href = window.location.href;
+        if (href.match(/^http:\/\/localhost:/)) return;
+        window.open('https://web.archive.org/save/' + href, '_blank');
+      });
+  });
+</script>
 </body>
 </html>
 
