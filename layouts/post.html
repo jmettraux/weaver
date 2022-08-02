@@ -44,6 +44,7 @@ ${CONTENT}
         if ( ! ev.shiftKey) return;
         var href = window.location.href;
         if (href.match(/^http:\/\/localhost:/)) return;
+        var i = href.lastIndexOf('&'); if (i > -1) href = href.substring(0, i);
         window.open('https://web.archive.org/save/' + href, '_blank');
       });
   });
