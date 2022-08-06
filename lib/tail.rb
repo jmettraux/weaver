@@ -10,7 +10,7 @@ HOSTS =
   Hash.new do |h, k|
     s = `dig -x #{k} @8.8.8.8`
     m = s.match(/PTR[ \t]+([^ ]+)\./)
-    h[k] = m[1] rescue '???'
+    h[k] = m[1].gsub("\n", '') rescue '???'
   end
 CITIES =
   Hash.new do |h, k|
