@@ -43,8 +43,8 @@ ${partial('filters.html')}
       .querySelector('.subtitle')
       .addEventListener('click', function(ev) {
         if ( ! ev.shiftKey) return;
-        var href = window.location.href;
-        if (href.match(/^http:\/\/localhost:/)) return;
+        if (window.location.href.match(/^http:\/\/localhost:/)) return;
+        var href = 'https://weaver.skepti.ch';
         window.open('https://web.archive.org/save/' + href, '_blank');
       });
   });
