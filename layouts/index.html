@@ -38,16 +38,37 @@ ${partial('filters.html')}
 <img class="pix" src="images/pix.png?t=index" loading="lazy" />
 
 <script type="text/javascript">
-  H.onDocumentReady(function() {
-    document
-      .querySelector('.subtitle')
-      .addEventListener('click', function(ev) {
-        if ( ! ev.shiftKey) return;
-        if (window.location.href.match(/^http:\/\/localhost:/)) return;
-        var href = 'https://weaver.skepti.ch';
-        window.open('https://web.archive.org/save/' + href, '_blank');
-      });
-  });
+
+function isInViewport(e) {
+  var r = e.getBoundingClientRect();
+  return (
+    r.top >= 0 &&
+    r.bottom <= (window.innerHeight || document.documentElement.clientHeight));
+}
+function onScroll(ev) {
+  document.querySelectorAll('img[data-src]')
+    .forEach(function(e) {
+      if (isInViewport(e)) {
+        e.src = e.getAttribute('data-src');
+        e.removeAttribute('data-src');
+      }
+    });
+}
+
+H.onDocumentReady(function() {
+
+  document.addEventListener('scroll', onScroll);
+  onScroll();
+
+  document
+    .querySelector('.subtitle')
+    .addEventListener('click', function(ev) {
+      if ( ! ev.shiftKey) return;
+      if (window.location.href.match(/^http:\/\/localhost:/)) return;
+      var href = 'https://weaver.skepti.ch';
+      window.open('https://web.archive.org/save/' + href, '_blank');
+    });
+});
 </script>
 </body>
 </html>

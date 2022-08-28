@@ -29,6 +29,8 @@ posts =
       .collect { |tag| tag_partial.substitute({ tag: tag }) }
       .join(' ')
 
+    vars['IMAGE0'] =
+      vars['blog']['rimage']
     vars['IMAGE'] =
       vars['twitter_image'] || vars['image'] || vars['blog']['rimage']
 
