@@ -35,7 +35,8 @@ do_render_post =
       d1 = [ d[0, 4], d[4, 2], d[6, 2] ].join('-')
       t = File.read(path).match(/^## (.+)\n/)[1]
       t1 = t.to_safe_string
-      l = "#{d}.html?t=#{t1}&l=#{kla}"
+      #l = "#{d}.html?t=#{t1}&l=#{kla}"
+      l = "#{d}.html?t=#{t1}"
         #
       "<div class=\"#{kla}\">" +
       "<a href=\"#{l}\">" +
