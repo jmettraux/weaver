@@ -48,10 +48,9 @@ function isInViewport(e) {
 function onScroll(ev) {
   document.querySelectorAll('img[data-src]')
     .forEach(function(e) {
-      if (isInViewport(e)) {
-        e.src = e.getAttribute('data-src');
-        e.removeAttribute('data-src');
-      }
+      if ( ! isInViewport(e)) return;
+      e.src = e.getAttribute('data-src');
+      e.removeAttribute('data-src');
     });
 }
 
