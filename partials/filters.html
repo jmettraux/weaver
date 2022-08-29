@@ -17,6 +17,8 @@ var onTagChange = function(h) {
     H.unhide('a.index');
     H.elt('a.index').href = '/?f=_' + window.location.hash.substring(1);
   }
+
+  onScroll();
 }
 
 var onAnchorChange = function(h) {
