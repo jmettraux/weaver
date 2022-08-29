@@ -10,7 +10,7 @@ posts =
 
     pa = File.basename(path, '.md') + '.html'
     pa = File.join(vars['blog']['uri'], pa)
-    pa = pa + '?t=' + vars['_title'] + '&amp;s=smap'
+    pa = pa + '?t=' + vars['_title']# + '&amp;s=smap'
 
     print " #{path}"
 
