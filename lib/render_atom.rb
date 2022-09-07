@@ -28,6 +28,7 @@ posts =
       .join("\n")
     vars['summary'] = Blog
       .md_render(ct.substitute(vars), mode: 'text', index: true)
+      .gsub(/^\s*Tl;dr\s+/, '')
       .gsub(/ \([^)]+\)/, '')
       .gsub(/&(?!amp;)/, '&amp;')
       .gsub(/"/, '\"')
