@@ -646,3 +646,17 @@ p.fleuron {
   text-align: center;
 }
 
+/*
+.months {
+  position: fixed;
+  bottom: 0;
+  right: 50%;
+  margin-right: -460px;
+  line-height: 1.05;
+  display: none;
+}
+.months li {
+  list-style: none;
+}
+*/
+

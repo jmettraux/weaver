@@ -6,6 +6,7 @@ post_partial = File.read('partials/index-post.html')
 tag_partial = File.read('partials/index-post-tag.html')
 
 all_tags = []
+months = {}
 
 posts =
   Dir['posts/*.md'].sort.reverse.collect do |path|
@@ -39,13 +40,22 @@ posts =
 
     all_tags.concat(vars['tags'])
 
+    d = vars['date'][0, 10]
+    m = d[0, 7]
+    months[m] ||= [ m, '#' + d.gsub(/-/, ''), 0 ]
+    months[m][-1] = months[m][-1] + 1
+
     post_partial.substitute(vars)
   end
 
 
 vars = Blog.merge_vars({})
 
-vars['CONTENT'] = posts.join("\n")
+vars['CONTENT'] =
+  posts.join("\n")
+vars['MONTHS'] =
+  ''
+  #months.map { |_, m| "<li><a href='#{m[1]}'>#{m[0]}</a></li>" }.join("\n")
 
 vars['all_tags'] = all_tags
   .uniq

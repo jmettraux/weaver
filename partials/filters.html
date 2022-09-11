@@ -23,6 +23,8 @@ var onTagChange = function(h) {
 
 var onAnchorChange = function(h) {
 
+  H.remc('div.post', '.hidden');
+
   //var e = H.elt(h); // <-- no worky, #20201112 is not a valid id it seems :-(
   var h1 = h.slice(1);
   var e = H.elts('div.post[id]').find(function(p) { return p.id === h1; });

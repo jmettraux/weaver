@@ -6,7 +6,16 @@ ${partial('head.html')}
 ${partial('favicon.html')}
 </head>
 <body id="index">
+
 <div id="content">
+
+<!--
+<div class="months">
+<ul>
+${MONTHS}
+</ul>
+</div>
+-->
 
 ${partial('blog-title.html')}
 
@@ -46,6 +55,9 @@ function isInViewport(e) {
     r.bottom <= (window.innerHeight || document.documentElement.clientHeight));
 }
 function onScroll(ev) {
+  //if (window.scrollY > 490) {
+  //  document.querySelector('.months').style.display = 'block';
+  //}
   document.querySelectorAll('img[data-src]')
     .forEach(function(e) {
       if ( ! isInViewport(e)) return;
