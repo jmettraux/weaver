@@ -1,0 +1,17 @@
+
+graph {
+
+  node [shape=plaintext]
+
+  "the city" -- "farm D" [style=dotted]
+  "farm D" -- center
+  "farm D" -- "farm E"
+  center -- "farm A"
+  center -- "farm B"
+  center -- "farm C" -- river
+  river -- "the village with mill" [style=dotted]
+  "farm A" -- "the next village" [style=dotted]
+  "farm E" -- "farm C" [style=dotted]
+  "the granary" -- center
+}
+

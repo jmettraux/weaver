@@ -1,0 +1,22 @@
+
+graph {
+
+  node [shape=plaintext]
+
+  ne [label="the Empire"]
+  ca [label="the city"]
+  vr [label="the rich village"]
+  vm [label="my village"]
+  vn [label="the next village"]
+  vl [label="the village with the mill"]
+  nw [label="the western kingdom"]
+  nm [label="the mountain range"]
+  ns [label="the sea cities"]
+
+  ne -- ca [style=dotted]
+  ca -- vr -- vm -- vn
+  vm -- vl
+  vn -- nw [style=dotted]
+  vl -- nm -- ns [style=dotted]
+}
+

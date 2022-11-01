@@ -11,6 +11,8 @@ dry =
   ARGV.include?('-d') || ARGV.include?('--dry')
 as =
   ARGV.include?('-as')
+cp =
+  ARGV.include?('-c') || ARGV.include?('-cp') || ARGV.include?('--copy')
 fnames =
   ARGV.select { |a|
     File.exist?(a) &&
@@ -29,22 +31,27 @@ if as
   end
 
   fname = fnames.first
-  t = "out/images/#{current}_#{ARGV.last}#{File.extname(fname)}"
+  t = "out/images/#{current}_#{File.basename(ARGV.last)}#{File.extname(fname)}"
   siz = `ls -lh #{fname}`.split[4]
 
   puts " . #{fname} (#{siz}) -->\n     #{t}"
   unless dry
-    system("mv #{fname} #{t}")
+    system("#{cp ? 'cp' : 'mv'} #{fname} #{t}")
   end
 
 else
 
   fnames.each do |fname|
-    t = "out/images/#{current}_#{fname}"
+
+    xt = File.extname(fname)
+    fn = File.basename(fname, xt)
+    t = "out/images/#{current}_#{fn}#{xt}"
     siz = `ls -lh #{fname}`.split[4]
+
     puts " . #{fname} (#{siz}) -->\n     #{t}"
+
     unless dry
-      system("mv #{fname} #{t}")
+      system("#{cp ? 'cp' : 'mv'} #{fname} #{t}")
     end
   end
 end
