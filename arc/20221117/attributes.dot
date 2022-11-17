@@ -1,0 +1,24 @@
+
+graph {
+
+  //layout=dot
+
+  PHY [ label="PHYsical", shape="none" ]
+  EVA [ label="EVAsion", shape="none" ]
+  MEN [ label="MENtal", shape="none" ]
+  COO [ label="COOrdination", shape="none" ]
+  FOR [ label="FORtitude", shape="none" ]
+  IMP [ label="IMPulse", shape="none" ]
+  LEA [ label="LEArning", shape="none" ]
+
+  STR -- PHY -- CON
+  DEX -- EVA -- INT
+  WIS -- MEN -- CHA
+
+  STR -- COO -- DEX
+  STR -- FOR -- INT
+
+  DEX -- IMP -- WIS
+  WIS -- LEA -- INT
+}
+
