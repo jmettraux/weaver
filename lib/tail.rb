@@ -51,8 +51,9 @@ STDIN.each_line do |l|
   a = HOSTS[m[1]]
   c = CITIES[m[1]]
   v = (c['security'] || {})['is_vpn'] ? 'vpn' : nil
-  t = ((c['timezone'] || {})['current_time'] || '').gsub(/:/, '')[0, 4]
-  c = [ c['country_code'], c['region_iso_code'], c['city'], v, t ].compact
+  c = [ c['country_code'], c['region_iso_code'], c['city'], v ].compact
+  #t = ((c['timezone'] || {})['current_time'] || '').gsub(/:/, '')[0, 4]
+  #c = [ c['country_code'], c['region_iso_code'], c['city'], v, t ].compact
 
   l = l.gsub(/\[[^\]]+\]/) { |x|
     t = x[1..-2].sub(':', ' ')
