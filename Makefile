@@ -3,6 +3,7 @@ HOST = shooto
 CURRENT != ls -1 -t posts/ | head -1
 CURR != basename $(CURRENT) '.md'
 BXR = bundle exec ruby -Ilib
+RUBY = ruby
 
 
 render: index posts copyright atom sitemap
@@ -56,7 +57,7 @@ cleandrafts:
 cleand: cleandrafts
 
 Serve: render
-	ruby -run -ehttpd out/ -p7000
+	$(RUBY) -run -ehttpd out/ -p7000
 serve:
 	$(BXR) lib/serve.rb
 S: Serve
@@ -71,9 +72,11 @@ PING:
 	$(BXR) lib/ping.rb --not-dry
 
 log:
-	ssh -t $(HOST) cat /var/www/logs/weaver_access.log | ruby lib/log.rb
+	ssh -t $(HOST) cat /var/www/logs/weaver_access.log | $(RUBY) lib/log.rb
 tail:
-	ssh -t $(HOST) tail -50 -f /var/www/logs/weaver_access.log | ruby lib/tail.rb
+	ssh -t $(HOST) tail -50 -f /var/www/logs/weaver_access.log | $(RUBY) lib/tail.rb
+autail:
+	autossh -M 2001 -t $(HOST) "tail -50 -f /var/www/logs/weaver_access.log" | $(RUBY) lib/tail.rb
 
 add:
 	git add out/images/ posts/
