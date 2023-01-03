@@ -75,8 +75,6 @@ log:
 	ssh -t $(HOST) cat /var/www/logs/weaver_access.log | $(RUBY) lib/log.rb
 tail:
 	ssh -t $(HOST) tail -f /var/www/logs/weaver_access.log | $(RUBY) lib/tail.rb
-autail:
-	autossh -M 2001 -t $(HOST) "tail -50 -f /var/www/logs/weaver_access.log" | $(RUBY) lib/tail.rb
 
 add:
 	git add out/images/ posts/
