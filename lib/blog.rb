@@ -75,7 +75,7 @@ module Blog
   @html_renderer =
     Redcarpet::Markdown.new(
       HtmlRenderer.new({}),
-      tables: false, footnotes: true)
+      tables: false, footnotes: true, strikethrough: true)
   @text_renderer =
     Redcarpet::Markdown.new(
       Redcarpet::Render::StripDown.new(),
