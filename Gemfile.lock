@@ -1,14 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    mini_portile2 (2.5.0)
-    nokogiri (1.11.1)
-      mini_portile2 (~> 2.5.0)
+    mini_portile2 (2.8.2)
+    nokogiri (1.15.3)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    racc (1.5.2)
-    redcarpet (3.5.1)
+    racc (1.7.1)
+    redcarpet (3.6.0)
     scorn (0.3.1)
-    webrick (1.7.0)
+    webrick (1.8.1)
 
 PLATFORMS
   ruby
@@ -20,4 +20,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.2.11
+   2.4.10
