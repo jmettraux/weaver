@@ -74,7 +74,8 @@ PING:
 log:
 	ssh -t $(HOST) cat /var/www/logs/weaver_access.log | $(RUBY) lib/log.rb
 tail:
-	ssh -t -o ServerAliveInterval=20 $(HOST) tail -f /var/www/logs/weaver_access.log | $(RUBY) lib/tail.rb
+	#ssh -t -o ServerAliveInterval=20 $(HOST) tail -f /var/www/logs/weaver_access.log | $(RUBY) lib/tail.rb
+	ssh -t $(HOST) tail -f -50 /var/www/logs/weaver_access.log | $(RUBY) lib/tail.rb
 
 add:
 	git add out/images/ posts/
