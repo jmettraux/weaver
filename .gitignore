@@ -25,3 +25,7 @@ arc/**/*.png
 
 .bundle/
 
+.chat.md
+.openai.*
+.deep*
+
