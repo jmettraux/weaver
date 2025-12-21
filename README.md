@@ -30,6 +30,12 @@ This blog uses:
 
 See https://github.com/sparklemotion/nokogiri/issues/1885
 
+```sh
+$ bundle config build.nokogiri --use-system-libraries
+$ bundle install
+```
+
+
 
 ## License
 
