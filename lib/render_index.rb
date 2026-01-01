@@ -45,6 +45,7 @@ posts =
     months[m] ||= [ m, '#' + d.gsub(/-/, ''), 0 ]
     months[m][-1] = months[m][-1] + 1
 
+pp vars if d.match(/^2025-12/)
     post_partial.substitute(vars)
   end
 
