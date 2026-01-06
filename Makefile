@@ -50,7 +50,7 @@ publish:
 	rsync -azv --delete --delete-excluded \
       --exclude *.swp \
       out/ $(HOST):/var/www/htdocs/weaver.skepti.ch/
-p: publish
+p: render publish
 
 cleandrafts:
 	ssh $(HOST) '/bin/sh -c "rm -fv /var/www/htdocs/weaver.skepti.ch/draft*.{html,jpg,png,gif}"'
