@@ -387,6 +387,10 @@ figcaption {
 }
 figcaption a { color: #aaaaaa; }
 figcaption a:visited { color: #aaaaaa; }
+figcaption.center {
+  width: 100%;
+  text-align: center;
+}
 figure.banner figcaption {
   margin-bottom: 0.77em;
   text-align: right;
