@@ -22,7 +22,7 @@ command! Img :call <SID>InsertImageTag()
 
 function! s:InsertTwitterImageLine()
   let l:current = fnamemodify(trim(system('ls -1 -t posts/ | head -1')), ':r')
-  exe "silent r! echo 'twitter_image: \"images/" . l:current . "_q_xxx.jpg\"'"
+  exe "silent r! echo 'twitter_image: \"images/" . l:current . "_tw_xxx.webp\"'"
 endfunction " InsertTwitterImageLine
 command! Timg :call <SID>InsertTwitterImageLine()
 
